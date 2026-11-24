@@ -199,8 +199,16 @@ The code here is the source of truth. Figma is built from it.
 
 ## Promotion candidates
 
-Blocks stay in the template. Something moves into `@graftwork/ui` only when two real apps need it. Candidates noticed so far:
+Blocks stay in the template. Something moves into `@graftwork/ui` only when it's worth sharing across apps.
 
-- **App shell:** sidebar plus a header with a trigger and breadcrumb, with slots. Repeated across all 16 sidebar blocks and `dashboard-01`.
-- **Sidebar overlaps:** the 16 sidebar blocks reuse the same handful of parts, copied into each block: a team or version switcher, a user menu, project and secondary navigation, and the header with a trigger and breadcrumb. `sidebar-03`, `-04` and `-14` differ only in variant and side, and `sidebar-10` and `-15` share their left sidebar. These parts are the app-shell candidate's slots.
-- **Auth page layout:** the centred, two-column and muted-background wrappers repeat across the login and sign-up blocks.
+**Promoted in `@graftwork/ui` 2.5.0:**
+
+- **AppShell** (with AppShellHeader and AppShellContent): the sidebar, sticky header with trigger and breadcrumb, and main area that repeated across the sidebar blocks. Every sidebar block uses it except `sidebar-16`, whose site header sits above the sidebar rather than inside the main area.
+- **AuthLayout**: the centred, muted and split page layouts that repeated across all ten log-in and sign-up blocks, which all use it.
+
+Both are in the Graftwork Design System Figma library.
+
+**Still candidates:**
+
+- **Sidebar parts:** the team or version switcher, user menu and project and secondary navigation are still copied into each sidebar block. They vary too much between blocks to share yet.
+- **A site header above the sidebar** (`sidebar-16`), if a second app needs one.

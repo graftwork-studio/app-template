@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Card, CardContent, CardDescription, CardHeader, Input } from "@graftwork/ui";
+import { AuthLayout, Button, Card, CardContent, CardDescription, CardHeader, Input } from "@graftwork/ui";
 import { GalleryVerticalEndIcon } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
@@ -45,83 +45,87 @@ export default function Signup03() {
     setMessage(valid ? "This is a sample block. Connect your sign-up here." : "");
   };
   return (
-    <main className="flex min-h-svh flex-col items-center justify-center gap-6 bg-surface-subtle p-6 md:p-10">
-      <div className="flex w-full max-w-sm flex-col gap-6">
-        <Link href="/" className="flex items-center gap-2 self-center font-medium text-text-default no-underline">
+    <AuthLayout
+      background="muted"
+      brand={
+        <Link href="/" className="flex items-center gap-2 font-medium text-text-default no-underline">
             <span className="flex size-6 items-center justify-center rounded-md bg-action-primary-bg text-text-on-primary">
               <GalleryVerticalEndIcon aria-hidden className="size-4" />
             </span>
             Your app
           </Link>
-        <Card>
-          <CardHeader className="text-center">
-            <h1 className="text-xl leading-heading font-medium text-text-default">Create your account</h1>
-            <CardDescription>Enter your email address to create your account.</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form noValidate aria-label="Create your account" className="flex flex-col gap-5" onSubmit={onSubmit}>
-              <Input
-                label="Full name"
-                name="name"
-                autoComplete="name"
-                isRequired
-                value={values.name}
-                onChange={set("name")}
-                isInvalid={shown("name") !== undefined}
-                errorMessage={shown("name")}
-              />
-              <Input
-                label="Email"
-                type="email"
-                name="email"
-                autoComplete="email"
-                placeholder="name@example.com"
-                isRequired
-                value={values.email}
-                onChange={set("email")}
-                isInvalid={shown("email") !== undefined}
-                errorMessage={shown("email")}
-              />
-              <Input
-                label="Password"
-                type="password"
-                name="new-password"
-                autoComplete="new-password"
-                description="At least 8 characters."
-                isRequired
-                value={values.password}
-                onChange={set("password")}
-                isInvalid={shown("password") !== undefined}
-                errorMessage={shown("password")}
-              />
-              <Input
-                label="Confirm password"
-                type="password"
-                name="confirm-password"
-                autoComplete="new-password"
-                description="Enter the same password again."
-                isRequired
-                value={values.confirm}
-                onChange={set("confirm")}
-                isInvalid={shown("confirm") !== undefined}
-                errorMessage={shown("confirm")}
-              />
-              <div className="flex flex-col gap-3">
-                <Button type="submit">Create account</Button>
-                <p className="text-center text-sm text-text-secondary">
-                  Already have an account? <a href="/log-in">Log in</a>
-                </p>
-              </div>
-              <p role="status" className="text-sm text-text-secondary">
-                {message}
-              </p>
-            </form>
-          </CardContent>
-        </Card>
-        <p className="px-6 text-center text-sm text-text-secondary">
+      }
+      footer={
+        <p>
           By continuing, you agree to our <a href="/terms">Terms of Service</a> and <a href="/privacy">Privacy Policy</a>.
         </p>
-      </div>
-    </main>
+      }
+    >
+      <Card>
+        <CardHeader className="text-center">
+          <h1 className="text-xl leading-heading font-medium text-text-default">Create your account</h1>
+          <CardDescription>Enter your email address to create your account.</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <form noValidate aria-label="Create your account" className="flex flex-col gap-5" onSubmit={onSubmit}>
+            <Input
+              label="Full name"
+              name="name"
+              autoComplete="name"
+              isRequired
+              value={values.name}
+              onChange={set("name")}
+              isInvalid={shown("name") !== undefined}
+              errorMessage={shown("name")}
+            />
+            <Input
+              label="Email"
+              type="email"
+              name="email"
+              autoComplete="email"
+              placeholder="name@example.com"
+              isRequired
+              value={values.email}
+              onChange={set("email")}
+              isInvalid={shown("email") !== undefined}
+              errorMessage={shown("email")}
+            />
+            <Input
+              label="Password"
+              type="password"
+              name="new-password"
+              autoComplete="new-password"
+              description="At least 8 characters."
+              isRequired
+              value={values.password}
+              onChange={set("password")}
+              isInvalid={shown("password") !== undefined}
+              errorMessage={shown("password")}
+            />
+            <Input
+              label="Confirm password"
+              type="password"
+              name="confirm-password"
+              autoComplete="new-password"
+              description="Enter the same password again."
+              isRequired
+              value={values.confirm}
+              onChange={set("confirm")}
+              isInvalid={shown("confirm") !== undefined}
+              errorMessage={shown("confirm")}
+            />
+            <div className="flex flex-col gap-3">
+              <Button type="submit">Create account</Button>
+              <p className="text-center text-sm text-text-secondary">
+                Already have an account? <a href="/log-in">Log in</a>
+              </p>
+            </div>
+            <p role="status" className="text-sm text-text-secondary">
+              {message}
+            </p>
+          </form>
+        </CardContent>
+      </Card>
+    </AuthLayout>
   );
 }
