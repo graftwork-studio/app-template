@@ -83,7 +83,7 @@ export const blocks: readonly Block[] = [
     category: "Sidebar",
     description: "A sidebar with navigation grouped by section.",
     upstream: { id: "sidebar-01", style: "aria-nova", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=16-442",
     status: "built",
   },
   {
@@ -92,7 +92,7 @@ export const blocks: readonly Block[] = [
     category: "Sidebar",
     description: "A sidebar with collapsible sections.",
     upstream: { id: "sidebar-02", style: "aria-nova", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=16-826",
     status: "built",
   },
   {
@@ -101,7 +101,7 @@ export const blocks: readonly Block[] = [
     category: "Sidebar",
     description: "A sidebar with submenus.",
     upstream: { id: "sidebar-03", style: "aria-nova", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=16-1196",
     status: "built",
   },
   {
@@ -110,7 +110,7 @@ export const blocks: readonly Block[] = [
     category: "Sidebar",
     description: "A floating sidebar with submenus.",
     upstream: { id: "sidebar-04", style: "aria-nova", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=16-1566",
     status: "built",
   },
   {
@@ -119,7 +119,7 @@ export const blocks: readonly Block[] = [
     category: "Sidebar",
     description: "A sidebar with collapsible submenus.",
     upstream: { id: "sidebar-05", style: "aria-nova", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=16-1868",
     status: "built",
   },
   {
@@ -128,7 +128,7 @@ export const blocks: readonly Block[] = [
     category: "Sidebar",
     description: "A sidebar with submenus as dropdown menus.",
     upstream: { id: "sidebar-06", style: "aria-nova", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=16-2097",
     status: "built",
   },
   {
@@ -137,7 +137,7 @@ export const blocks: readonly Block[] = [
     category: "Sidebar",
     description: "A sidebar that collapses to icons.",
     upstream: { id: "sidebar-07", style: "aria-nova", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=16-2405",
     status: "built",
   },
   {
@@ -146,7 +146,7 @@ export const blocks: readonly Block[] = [
     category: "Sidebar",
     description: "An inset sidebar with secondary navigation.",
     upstream: { id: "sidebar-08", style: "aria-nova", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=16-2713",
     status: "built",
   },
   {
@@ -155,7 +155,7 @@ export const blocks: readonly Block[] = [
     category: "Sidebar",
     description: "Collapsible nested sidebars.",
     upstream: { id: "sidebar-09", style: "aria-nova", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=17-1372",
     status: "built",
   },
   {
@@ -164,7 +164,7 @@ export const blocks: readonly Block[] = [
     category: "Sidebar",
     description: "A sidebar in a popover.",
     upstream: { id: "sidebar-10", style: "aria-nova", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=17-1738",
     status: "built",
   },
   {
@@ -173,7 +173,7 @@ export const blocks: readonly Block[] = [
     category: "Sidebar",
     description: "A sidebar with a collapsible file tree.",
     upstream: { id: "sidebar-11", style: "aria-nova", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=17-2049",
     status: "built",
   },
   {
@@ -182,7 +182,7 @@ export const blocks: readonly Block[] = [
     category: "Sidebar",
     description: "A sidebar with a calendar.",
     upstream: { id: "sidebar-12", style: "aria-nova", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=17-2824",
     status: "built",
   },
   {
@@ -191,7 +191,7 @@ export const blocks: readonly Block[] = [
     category: "Sidebar",
     description: "A sidebar in a dialog.",
     upstream: { id: "sidebar-13", style: "aria-nova", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=17-3063",
     status: "built",
   },
   {
@@ -200,7 +200,7 @@ export const blocks: readonly Block[] = [
     category: "Sidebar",
     description: "A sidebar on the right.",
     upstream: { id: "sidebar-14", style: "aria-nova", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=17-3409",
     status: "built",
   },
   {
@@ -209,7 +209,7 @@ export const blocks: readonly Block[] = [
     category: "Sidebar",
     description: "A left and a right sidebar.",
     upstream: { id: "sidebar-15", style: "aria-nova", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=17-3865",
     status: "built",
   },
   {
@@ -218,7 +218,7 @@ export const blocks: readonly Block[] = [
     category: "Sidebar",
     description: "A sidebar with a sticky site header.",
     upstream: { id: "sidebar-16", style: "aria-nova", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=17-4202",
     status: "built",
   },
 
