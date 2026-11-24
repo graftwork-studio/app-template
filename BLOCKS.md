@@ -74,16 +74,16 @@ Taken on 24 November 2026 from the shadcn/ui registry (CLI 4.23.0). `app/blocks/
 | `sidebar-14` | Sidebar | A sidebar on the right. | Breadcrumb, Sidebar | — | — | 3 | Built | [sidebar-14](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=17-3409) |
 | `sidebar-15` | Sidebar | A left and a right sidebar. | Avatar, Breadcrumb, Calendar, Collapsible, DropdownMenu, Popover, Separator, Sidebar | — | — | 3 | Built | [sidebar-15](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=17-3865) |
 | `sidebar-16` | Sidebar | A sidebar with a sticky site header. | Avatar, Breadcrumb, Button, Collapsible, DropdownMenu, Label, Separator, Sidebar | — | — | 3 | Built | [sidebar-16](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=17-4202) |
-| `chart-area-axes` | Charts | A stacked area chart with a value axis. | Card, AreaChart | — | — | 4 | Built | — |
-| `chart-area-default` | Charts | An area chart with one series. | Card, AreaChart | — | — | 4 | Built | — |
+| `chart-area-axes` | Charts | A stacked area chart with a value axis. | Card, AreaChart | — | — | 4 | Built | [chart-area-axes](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-4849) |
+| `chart-area-default` | Charts | An area chart with one series. | Card, AreaChart | — | — | 4 | Built | [chart-area-default](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-3266) |
 | `chart-area-gradient` | Charts | A stacked area chart with gradient fills. | Card, AreaChart | AreaChart support for gradient fills | AreaChart support for gradient fills | 4 | Parked | — |
 | `chart-area-icons` | Charts | A stacked area chart with icons in the legend. | Card, AreaChart | AreaChart support for legend icons | AreaChart support for legend icons | 4 | Parked | — |
-| `chart-area-interactive` | Charts | A stacked area chart of daily figures with a time-range control. | Card, AreaChart | — | — | 4 | Built | — |
-| `chart-area-legend` | Charts | A stacked area chart with a legend. | Card, AreaChart | — | — | 4 | Built | — |
-| `chart-area-linear` | Charts | An area chart with straight lines between points. | Card, LineChart | — | — | 4 | Built | — |
-| `chart-area-stacked` | Charts | An area chart with two stacked series. | Card, AreaChart | — | — | 4 | Built | — |
-| `chart-area-stacked-expand` | Charts | An area chart showing each series' share of the total. | Card, AreaChart | — | — | 4 | Built | — |
-| `chart-area-step` | Charts | An area chart drawn as steps. | Card, AreaChart | — | — | 4 | Built | — |
+| `chart-area-interactive` | Charts | A stacked area chart of daily figures with a time-range control. | Card, AreaChart | — | — | 4 | Built | [chart-area-interactive](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-5899) |
+| `chart-area-legend` | Charts | A stacked area chart with a legend. | Card, AreaChart | — | — | 4 | Built | [chart-area-legend](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-4524) |
+| `chart-area-linear` | Charts | An area chart with straight lines between points. | Card, LineChart | — | — | 4 | Built | [chart-area-linear](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-3577) |
+| `chart-area-stacked` | Charts | An area chart with two stacked series. | Card, AreaChart | — | — | 4 | Built | [chart-area-stacked](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-4199) |
+| `chart-area-stacked-expand` | Charts | An area chart showing each series' share of the total. | Card, AreaChart | — | — | 4 | Built | [chart-area-stacked-expand](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-5174) |
+| `chart-area-step` | Charts | An area chart drawn as steps. | Card, AreaChart | — | — | 4 | Built | [chart-area-step](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-3888) |
 | `chart-bar-active` | Charts | A bar chart with a highlighted (active) bar. | Card, BarChart | BarChart support for a highlighted (active) bar | BarChart support for a highlighted (active) bar | 4 | Parked | — |
 | `chart-bar-default` | Charts | A bar chart with one series. | BarChart, Card | — | — | 4 | Built | [chart-bar-default](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=15-326) |
 | `chart-bar-horizontal` | Charts | A bar chart with horizontal bars. | Card, BarChart | BarChart support for horizontal bars | BarChart support for horizontal bars | 4 | Parked | — |
@@ -94,16 +94,16 @@ Taken on 24 November 2026 from the shadcn/ui registry (CLI 4.23.0). `app/blocks/
 | `chart-bar-multiple` | Charts | A bar chart with two series side by side. | BarChart, Card | — | — | 4 | Built | [chart-bar-multiple](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=15-534) |
 | `chart-bar-negative` | Charts | A bar chart with negative values with their own colour. | Card, BarChart | BarChart support for negative values with their own colour | BarChart support for negative values with their own colour | 4 | Parked | — |
 | `chart-bar-stacked` | Charts | A bar chart with stacked series. | Card, BarChart | BarChart support for stacked series | BarChart support for stacked series | 4 | Parked | — |
-| `chart-line-default` | Charts | A line chart with one series. | Card, LineChart | — | — | 4 | Built | — |
-| `chart-line-dots` | Charts | A line chart with a dot on each point. | Card, LineChart | — | — | 4 | Built | — |
+| `chart-line-default` | Charts | A line chart with one series. | Card, LineChart | — | — | 4 | Built | [chart-line-default](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-1383) |
+| `chart-line-dots` | Charts | A line chart with a dot on each point. | Card, LineChart | — | — | 4 | Built | [chart-line-dots](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-2596) |
 | `chart-line-dots-colors` | Charts | A line chart with a colour for each point. | Card, LineChart | LineChart support for a colour per point | LineChart support for a colour per point | 4 | Parked | — |
 | `chart-line-dots-custom` | Charts | A line chart with icons as point markers. | Card, LineChart | LineChart support for custom point markers | LineChart support for custom point markers | 4 | Parked | — |
-| `chart-line-interactive` | Charts | A line chart of daily figures with a control to switch series. | Card, LineChart | — | — | 4 | Built | — |
-| `chart-line-label` | Charts | A line chart with each point's value. | Card, LineChart | — | — | 4 | Built | — |
+| `chart-line-interactive` | Charts | A line chart of daily figures with a control to switch series. | Card, LineChart | — | — | 4 | Built | [chart-line-interactive](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-5598) |
+| `chart-line-label` | Charts | A line chart with each point's value. | Card, LineChart | — | — | 4 | Built | [chart-line-label](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-2919) |
 | `chart-line-label-custom` | Charts | A line chart labelled with category names. | Card, LineChart | LineChart support for category labels and a colour per point | LineChart support for category labels and a colour per point | 4 | Parked | — |
-| `chart-line-linear` | Charts | A line chart with straight lines between points. | Card, LineChart | — | — | 4 | Built | — |
-| `chart-line-multiple` | Charts | A line chart with two series. | Card, LineChart | — | — | 4 | Built | — |
-| `chart-line-step` | Charts | A line chart drawn as steps. | Card, LineChart | — | — | 4 | Built | — |
+| `chart-line-linear` | Charts | A line chart with straight lines between points. | Card, LineChart | — | — | 4 | Built | [chart-line-linear](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-1685) |
+| `chart-line-multiple` | Charts | A line chart with two series. | Card, LineChart | — | — | 4 | Built | [chart-line-multiple](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-2283) |
+| `chart-line-step` | Charts | A line chart drawn as steps. | Card, LineChart | — | — | 4 | Built | [chart-line-step](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-1984) |
 | `chart-pie-donut` | Charts | A pie chart example (donut). | Card, PieChart | PieChart | PieChart | 4 | Parked | — |
 | `chart-pie-donut-active` | Charts | A pie chart example (donut active). | Card, PieChart | PieChart | PieChart | 4 | Parked | — |
 | `chart-pie-donut-text` | Charts | A pie chart example (donut text). | Card, PieChart | PieChart | PieChart | 4 | Parked | — |
