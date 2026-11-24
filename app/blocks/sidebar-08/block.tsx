@@ -12,7 +12,7 @@ import { AppSidebar } from "./app-sidebar";
 export default function Block() {
   return (
     <AppShell sidebar={<AppSidebar />}>
-      <AppShellHeader className="border-b-0">
+      <AppShellHeader className="border-b-0 md:rounded-t-xl">
         <Breadcrumb>
           <BreadcrumbItem href="#building-your-app" className="hidden md:flex">
             Building your app
