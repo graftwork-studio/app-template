@@ -70,6 +70,7 @@ function matches(text: string, query: string) {
 export function BlockGallery() {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState<BlockCategory | "all">("all");
+  const [parkedOpen, setParkedOpen] = useState(false);
 
   const categories = useMemo(() => [...new Set(builtBlocks.map((block) => block.category))], []);
   const [expanded, setExpanded] = useState<Set<string>>(() => new Set(categories.slice(0, 1)));
@@ -139,33 +140,38 @@ export function BlockGallery() {
         </Accordion>
       )}
 
-      <section aria-labelledby="parked-blocks" className="flex flex-col gap-3">
-        <h2 id="parked-blocks" className="text-xl leading-heading font-semibold">
-          Parked blocks ({shownParked.length})
-        </h2>
-        <p className="text-text-secondary">
-          These need a component or feature that the design system doesn’t have yet. BLOCKS.md says what each is
-          waiting for.
-        </p>
-        {shownParked.length > 0 ? (
-          <Table aria-labelledby="parked-blocks" density="compact">
-            <TableHeader>
-              <TableColumn isRowHeader>Block</TableColumn>
-              <TableColumn>Category</TableColumn>
-              <TableColumn>Why it’s parked</TableColumn>
-            </TableHeader>
-            <TableBody items={shownParked}>
-              {(block) => (
-                <TableRow id={block.id}>
-                  <TableCell>{block.id}</TableCell>
-                  <TableCell>{block.category}</TableCell>
-                  <TableCell>{block.reason}</TableCell>
-                </TableRow>
-              )}
-            </TableBody>
-          </Table>
-        ) : null}
-      </section>
+      {/* Collapsed by default: the list is long, and only matters when you're looking for what's missing. */}
+      <Accordion expandedKeys={parkedOpen ? ["parked"] : []} onExpandedChange={(keys) => setParkedOpen(keys.size > 0)}>
+        <AccordionItem id="parked">
+          <AccordionTrigger level={2}>Parked blocks ({shownParked.length})</AccordionTrigger>
+          <AccordionContent>
+            <div className="flex flex-col gap-3 pb-6">
+              <p className="text-text-secondary">
+                These need a component or feature that the design system doesn’t have yet. BLOCKS.md says what each
+                is waiting for.
+              </p>
+              {parkedOpen && shownParked.length > 0 ? (
+                <Table aria-label="Parked blocks" density="compact">
+                  <TableHeader>
+                    <TableColumn isRowHeader>Block</TableColumn>
+                    <TableColumn>Category</TableColumn>
+                    <TableColumn>Why it’s parked</TableColumn>
+                  </TableHeader>
+                  <TableBody items={shownParked}>
+                    {(block) => (
+                      <TableRow id={block.id}>
+                        <TableCell>{block.id}</TableCell>
+                        <TableCell>{block.category}</TableCell>
+                        <TableCell>{block.reason}</TableCell>
+                      </TableRow>
+                    )}
+                  </TableBody>
+                </Table>
+              ) : null}
+            </div>
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
     </div>
   );
 }

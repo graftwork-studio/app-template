@@ -50,7 +50,14 @@ test("the gallery lists every built and parked block from the registry", async (
   // The first category is open, so its previews are rendered.
   const first = builtBlocks[0]!;
   await expect(page.locator(`[data-block="${first.id}"] iframe`)).toHaveAttribute("src", `/blocks/preview/${first.id}`);
-  await expect(page.getByRole("heading", { level: 2, name: `Parked blocks (${parkedBlocks.length})` })).toBeVisible();
+  // Parked blocks are collapsed until asked for, then list every one with its reason.
+  const parked = page.getByRole("button", { name: `Parked blocks (${parkedBlocks.length})` });
+  await expect(parked).toHaveAttribute("aria-expanded", "false");
+  await parked.focus();
+  await page.keyboard.press("Enter");
+  const table = page.getByRole("grid", { name: "Parked blocks" });
+  await expect(table.getByRole("row")).toHaveCount(parkedBlocks.length + 1);
+  await expect(table.getByRole("rowheader", { name: "dashboard-01" })).toBeVisible();
 });
 
 test("gallery search filters blocks, and width and theme change the preview", async ({ page }) => {
