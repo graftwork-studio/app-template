@@ -68,31 +68,30 @@ export default function Signup04() {
                 isInvalid={shown("email") !== undefined}
                 errorMessage={shown("email")}
               />
-              <div className="grid gap-5 sm:grid-cols-2 sm:gap-4">
-                <Input
-                  label="Password"
-                  type="password"
-                  name="new-password"
-                  autoComplete="new-password"
-                  description="At least 8 characters."
-                  isRequired
-                  value={values.password}
-                  onChange={set("password")}
-                  isInvalid={shown("password") !== undefined}
-                  errorMessage={shown("password")}
-                />
-                <Input
-                  label="Confirm password"
-                  type="password"
-                  name="confirm-password"
-                  autoComplete="new-password"
-                  isRequired
-                  value={values.confirm}
-                  onChange={set("confirm")}
-                  isInvalid={shown("confirm") !== undefined}
-                  errorMessage={shown("confirm")}
-                />
-              </div>
+              <Input
+                label="Password"
+                type="password"
+                name="new-password"
+                autoComplete="new-password"
+                description="At least 8 characters."
+                isRequired
+                value={values.password}
+                onChange={set("password")}
+                isInvalid={shown("password") !== undefined}
+                errorMessage={shown("password")}
+              />
+              <Input
+                label="Confirm password"
+                type="password"
+                name="confirm-password"
+                autoComplete="new-password"
+                description="Enter the same password again."
+                isRequired
+                value={values.confirm}
+                onChange={set("confirm")}
+                isInvalid={shown("confirm") !== undefined}
+                errorMessage={shown("confirm")}
+              />
               <Button type="submit">Create account</Button>
               <FieldSeparator>Or continue with</FieldSeparator>
               <div className="grid grid-cols-3 gap-4">

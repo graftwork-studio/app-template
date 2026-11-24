@@ -149,6 +149,10 @@ Taken on 24 November 2026 from the shadcn/ui registry (CLI 4.23.0). `app/blocks/
 | `preview-02` | Upstream previews | Upstream’s second theme preview: a grid of component examples, including a QR code. | — | — | — | 5 | Parked | — |
 | `preview-03` | Upstream previews | An empty upstream stub (it renders “Preview 03”). | — | — | — | 5 | Parked | — |
 
+## How blocks differ from upstream
+
+- **Passwords:** upstream's `signup-03` and `signup-04` put the password and its confirmation side by side, with one shared hint under both that isn't linked to either field. They're stacked here, each with its own linked hint.
+
 ## Parked blocks
 
 A parked block can't be built from `@graftwork/ui` yet. Its registry entry has `status: "parked"` and a `reason`, and the gallery lists it separately. It gets no Figma component until it's built.
