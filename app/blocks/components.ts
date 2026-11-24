@@ -4,6 +4,9 @@ import Login02 from "./login-02/block";
 import Login03 from "./login-03/block";
 import Login04 from "./login-04/block";
 import Login05 from "./login-05/block";
+import ChartBarDefault from "./chart-bar-default/block";
+import ChartBarMultiple from "./chart-bar-multiple/block";
+import ChartBarInteractive from "./chart-bar-interactive/block";
 import Sidebar01 from "./sidebar-01/block";
 import Sidebar02 from "./sidebar-02/block";
 import Sidebar03 from "./sidebar-03/block";
@@ -33,6 +36,9 @@ export const blockComponents: Record<string, ComponentType> = {
   "login-03": Login03,
   "login-04": Login04,
   "login-05": Login05,
+  "chart-bar-default": ChartBarDefault,
+  "chart-bar-multiple": ChartBarMultiple,
+  "chart-bar-interactive": ChartBarInteractive,
   "sidebar-01": Sidebar01,
   "sidebar-02": Sidebar02,
   "sidebar-03": Sidebar03,

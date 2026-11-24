@@ -78,6 +78,33 @@ export const blocks: readonly Block[] = [
   },
 
   {
+    id: "chart-bar-default",
+    title: "Bar chart",
+    category: "Charts",
+    description: "A bar chart with one series.",
+    upstream: { id: "chart-bar-default", style: "new-york-v4", version: UPSTREAM_VERSION },
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=15-326",
+    status: "built",
+  },
+  {
+    id: "chart-bar-multiple",
+    title: "Bar chart: multiple",
+    category: "Charts",
+    description: "A bar chart with two series side by side.",
+    upstream: { id: "chart-bar-multiple", style: "new-york-v4", version: UPSTREAM_VERSION },
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=15-534",
+    status: "built",
+  },
+  {
+    id: "chart-bar-interactive",
+    title: "Bar chart: interactive",
+    category: "Charts",
+    description: "A bar chart with a control to switch series, with weekly totals.",
+    upstream: { id: "chart-bar-interactive", style: "new-york-v4", version: UPSTREAM_VERSION },
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=15-878",
+    status: "built",
+  },
+  {
     id: "sidebar-01",
     title: "Sidebar 01",
     category: "Sidebar",
