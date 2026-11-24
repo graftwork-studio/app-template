@@ -20,6 +20,11 @@ import Sidebar13 from "./sidebar-13/block";
 import Sidebar14 from "./sidebar-14/block";
 import Sidebar15 from "./sidebar-15/block";
 import Sidebar16 from "./sidebar-16/block";
+import Signup01 from "./signup-01/block";
+import Signup02 from "./signup-02/block";
+import Signup03 from "./signup-03/block";
+import Signup04 from "./signup-04/block";
+import Signup05 from "./signup-05/block";
 
 /** The component for each built block, by id. registry.ts holds everything else about it. */
 export const blockComponents: Record<string, ComponentType> = {
@@ -44,4 +49,9 @@ export const blockComponents: Record<string, ComponentType> = {
   "sidebar-14": Sidebar14,
   "sidebar-15": Sidebar15,
   "sidebar-16": Sidebar16,
+  "signup-01": Signup01,
+  "signup-02": Signup02,
+  "signup-03": Signup03,
+  "signup-04": Signup04,
+  "signup-05": Signup05,
 };
