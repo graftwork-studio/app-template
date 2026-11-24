@@ -4,6 +4,21 @@ import Login02 from "./login-02/block";
 import Login03 from "./login-03/block";
 import Login04 from "./login-04/block";
 import Login05 from "./login-05/block";
+import ChartAreaAxes from "./chart-area-axes/block";
+import ChartAreaDefault from "./chart-area-default/block";
+import ChartAreaInteractive from "./chart-area-interactive/block";
+import ChartAreaLegend from "./chart-area-legend/block";
+import ChartAreaLinear from "./chart-area-linear/block";
+import ChartAreaStacked from "./chart-area-stacked/block";
+import ChartAreaStackedExpand from "./chart-area-stacked-expand/block";
+import ChartAreaStep from "./chart-area-step/block";
+import ChartLineDefault from "./chart-line-default/block";
+import ChartLineDots from "./chart-line-dots/block";
+import ChartLineInteractive from "./chart-line-interactive/block";
+import ChartLineLabel from "./chart-line-label/block";
+import ChartLineLinear from "./chart-line-linear/block";
+import ChartLineMultiple from "./chart-line-multiple/block";
+import ChartLineStep from "./chart-line-step/block";
 import ChartBarDefault from "./chart-bar-default/block";
 import ChartBarMultiple from "./chart-bar-multiple/block";
 import ChartBarInteractive from "./chart-bar-interactive/block";
@@ -36,6 +51,21 @@ export const blockComponents: Record<string, ComponentType> = {
   "login-03": Login03,
   "login-04": Login04,
   "login-05": Login05,
+  "chart-area-axes": ChartAreaAxes,
+  "chart-area-default": ChartAreaDefault,
+  "chart-area-interactive": ChartAreaInteractive,
+  "chart-area-legend": ChartAreaLegend,
+  "chart-area-linear": ChartAreaLinear,
+  "chart-area-stacked": ChartAreaStacked,
+  "chart-area-stacked-expand": ChartAreaStackedExpand,
+  "chart-area-step": ChartAreaStep,
+  "chart-line-default": ChartLineDefault,
+  "chart-line-dots": ChartLineDots,
+  "chart-line-interactive": ChartLineInteractive,
+  "chart-line-label": ChartLineLabel,
+  "chart-line-linear": ChartLineLinear,
+  "chart-line-multiple": ChartLineMultiple,
+  "chart-line-step": ChartLineStep,
   "chart-bar-default": ChartBarDefault,
   "chart-bar-multiple": ChartBarMultiple,
   "chart-bar-interactive": ChartBarInteractive,

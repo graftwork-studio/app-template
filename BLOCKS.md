@@ -30,9 +30,9 @@ The gallery is on in development and in the test build, and returns 404 in a pro
 
 Taken on 24 November 2026 from the shadcn/ui registry (CLI 4.23.0). `app/blocks/inventory.ts` holds the same list for the tests.
 
-- **Page blocks (30):** upstream offers 27 page blocks plus 3 internal previews for the React Aria base (`aria-nova` style). The Radix (`radix-nova`) and Base UI (`base-nova`) styles offer the same 30. All 27 page blocks use components we have, apart from `dashboard-01`'s area chart and draggable table rows.
-- **Chart blocks (70):** upstream offers these for the Radix base only (`new-york-v4`). They don't exist in the `aria-nova` registry. They are Recharts examples in a card, and most need chart types we don't have. Three bar charts can be built with `BarChart`.
-- **Figma:** all 67 `@graftwork/ui` components are in the Graftwork Design System library (`PROGRESS.md` predates the last ten being published). The Figma library has no chart beyond BarChart, so "Missing in Figma" matches "Missing in code" for charts.
+- **Page blocks (30):** upstream offers 27 page blocks plus 3 internal previews for the React Aria base (`aria-nova` style). The Radix (`radix-nova`) and Base UI (`base-nova`) styles offer the same 30. All 27 page blocks use components we have, apart from `dashboard-01`'s draggable table rows.
+- **Chart blocks (70):** upstream offers these for the Radix base only (`new-york-v4`). They don't exist in the `aria-nova` registry. They are Recharts examples in a card. 18 can be built with `BarChart`, `LineChart` and `AreaChart`; the rest need other chart types or options.
+- **Figma:** all 67 `@graftwork/ui` components are in the Graftwork Design System library (`PROGRESS.md` predates the last ten being published). The Figma library has BarChart, LineChart and AreaChart, so "Missing in Figma" matches "Missing in code" for charts.
 
 ### Build batches
 
@@ -41,7 +41,7 @@ Taken on 24 November 2026 from the shadcn/ui registry (CLI 4.23.0). `app/blocks/
 | 1 (pilot) | Login | 5 | 5 | 0 | No missing components |
 | 2 | Sign-up | 5 | 5 | 0 | No missing components |
 | 3 | Sidebar | 16 | 16 | 0 | No missing components |
-| 4 | Charts | 70 | 3 | 67 | `chart-bar-default`, `chart-bar-multiple` and `chart-bar-interactive` can be built |
+| 4 | Charts | 70 | 18 | 52 | Three bar charts with `BarChart`, seven line charts with `LineChart` and eight area charts with `AreaChart` (`@graftwork/ui` 2.6.0) |
 | 5 | Dashboard and upstream previews | 4 | 0 | 4 | Parked |
 
 ### All blocks
@@ -74,16 +74,16 @@ Taken on 24 November 2026 from the shadcn/ui registry (CLI 4.23.0). `app/blocks/
 | `sidebar-14` | Sidebar | A sidebar on the right. | Breadcrumb, Sidebar | — | — | 3 | Built | [sidebar-14](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=17-3409) |
 | `sidebar-15` | Sidebar | A left and a right sidebar. | Avatar, Breadcrumb, Calendar, Collapsible, DropdownMenu, Popover, Separator, Sidebar | — | — | 3 | Built | [sidebar-15](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=17-3865) |
 | `sidebar-16` | Sidebar | A sidebar with a sticky site header. | Avatar, Breadcrumb, Button, Collapsible, DropdownMenu, Label, Separator, Sidebar | — | — | 3 | Built | [sidebar-16](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=17-4202) |
-| `chart-area-axes` | Charts | A area chart example (axes). | Card, AreaChart | AreaChart | AreaChart | 4 | Parked | — |
-| `chart-area-default` | Charts | A area chart example (default). | Card, AreaChart | AreaChart | AreaChart | 4 | Parked | — |
-| `chart-area-gradient` | Charts | A area chart example (gradient). | Card, AreaChart | AreaChart | AreaChart | 4 | Parked | — |
-| `chart-area-icons` | Charts | A area chart example (icons). | Card, AreaChart | AreaChart | AreaChart | 4 | Parked | — |
-| `chart-area-interactive` | Charts | A area chart example (interactive). | Card, AreaChart | AreaChart | AreaChart | 4 | Parked | — |
-| `chart-area-legend` | Charts | A area chart example (legend). | Card, AreaChart | AreaChart | AreaChart | 4 | Parked | — |
-| `chart-area-linear` | Charts | A area chart example (linear). | Card, AreaChart | AreaChart | AreaChart | 4 | Parked | — |
-| `chart-area-stacked` | Charts | A area chart example (stacked). | Card, AreaChart | AreaChart | AreaChart | 4 | Parked | — |
-| `chart-area-stacked-expand` | Charts | A area chart example (stacked expand). | Card, AreaChart | AreaChart | AreaChart | 4 | Parked | — |
-| `chart-area-step` | Charts | A area chart example (step). | Card, AreaChart | AreaChart | AreaChart | 4 | Parked | — |
+| `chart-area-axes` | Charts | A stacked area chart with a value axis. | Card, AreaChart | — | — | 4 | Built | FIGMA:chart-area-axes |
+| `chart-area-default` | Charts | An area chart with one series. | Card, AreaChart | — | — | 4 | Built | FIGMA:chart-area-default |
+| `chart-area-gradient` | Charts | A stacked area chart with gradient fills. | Card, AreaChart | AreaChart support for gradient fills | AreaChart support for gradient fills | 4 | Parked | — |
+| `chart-area-icons` | Charts | A stacked area chart with icons in the legend. | Card, AreaChart | AreaChart support for legend icons | AreaChart support for legend icons | 4 | Parked | — |
+| `chart-area-interactive` | Charts | A stacked area chart of daily figures with a time-range control. | Card, AreaChart | — | — | 4 | Built | FIGMA:chart-area-interactive |
+| `chart-area-legend` | Charts | A stacked area chart with a legend. | Card, AreaChart | — | — | 4 | Built | FIGMA:chart-area-legend |
+| `chart-area-linear` | Charts | An area chart with straight lines between points. | Card, LineChart | — | — | 4 | Built | FIGMA:chart-area-linear |
+| `chart-area-stacked` | Charts | An area chart with two stacked series. | Card, AreaChart | — | — | 4 | Built | FIGMA:chart-area-stacked |
+| `chart-area-stacked-expand` | Charts | An area chart showing each series' share of the total. | Card, AreaChart | — | — | 4 | Built | FIGMA:chart-area-stacked-expand |
+| `chart-area-step` | Charts | An area chart drawn as steps. | Card, AreaChart | — | — | 4 | Built | FIGMA:chart-area-step |
 | `chart-bar-active` | Charts | A bar chart with a highlighted (active) bar. | Card, BarChart | BarChart support for a highlighted (active) bar | BarChart support for a highlighted (active) bar | 4 | Parked | — |
 | `chart-bar-default` | Charts | A bar chart with one series. | BarChart, Card | — | — | 4 | Built | [chart-bar-default](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=15-326) |
 | `chart-bar-horizontal` | Charts | A bar chart with horizontal bars. | Card, BarChart | BarChart support for horizontal bars | BarChart support for horizontal bars | 4 | Parked | — |
@@ -94,16 +94,16 @@ Taken on 24 November 2026 from the shadcn/ui registry (CLI 4.23.0). `app/blocks/
 | `chart-bar-multiple` | Charts | A bar chart with two series side by side. | BarChart, Card | — | — | 4 | Built | [chart-bar-multiple](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=15-534) |
 | `chart-bar-negative` | Charts | A bar chart with negative values with their own colour. | Card, BarChart | BarChart support for negative values with their own colour | BarChart support for negative values with their own colour | 4 | Parked | — |
 | `chart-bar-stacked` | Charts | A bar chart with stacked series. | Card, BarChart | BarChart support for stacked series | BarChart support for stacked series | 4 | Parked | — |
-| `chart-line-default` | Charts | A line chart example (default). | Card, LineChart | LineChart | LineChart | 4 | Parked | — |
-| `chart-line-dots` | Charts | A line chart example (dots). | Card, LineChart | LineChart | LineChart | 4 | Parked | — |
-| `chart-line-dots-colors` | Charts | A line chart example (dots colors). | Card, LineChart | LineChart | LineChart | 4 | Parked | — |
-| `chart-line-dots-custom` | Charts | A line chart example (dots custom). | Card, LineChart | LineChart | LineChart | 4 | Parked | — |
-| `chart-line-interactive` | Charts | A line chart example (interactive). | Card, LineChart | LineChart | LineChart | 4 | Parked | — |
-| `chart-line-label` | Charts | A line chart example (label). | Card, LineChart | LineChart | LineChart | 4 | Parked | — |
-| `chart-line-label-custom` | Charts | A line chart example (label custom). | Card, LineChart | LineChart | LineChart | 4 | Parked | — |
-| `chart-line-linear` | Charts | A line chart example (linear). | Card, LineChart | LineChart | LineChart | 4 | Parked | — |
-| `chart-line-multiple` | Charts | A line chart example (multiple). | Card, LineChart | LineChart | LineChart | 4 | Parked | — |
-| `chart-line-step` | Charts | A line chart example (step). | Card, LineChart | LineChart | LineChart | 4 | Parked | — |
+| `chart-line-default` | Charts | A line chart with one series. | Card, LineChart | — | — | 4 | Built | FIGMA:chart-line-default |
+| `chart-line-dots` | Charts | A line chart with a dot on each point. | Card, LineChart | — | — | 4 | Built | FIGMA:chart-line-dots |
+| `chart-line-dots-colors` | Charts | A line chart with a colour for each point. | Card, LineChart | LineChart support for a colour per point | LineChart support for a colour per point | 4 | Parked | — |
+| `chart-line-dots-custom` | Charts | A line chart with icons as point markers. | Card, LineChart | LineChart support for custom point markers | LineChart support for custom point markers | 4 | Parked | — |
+| `chart-line-interactive` | Charts | A line chart of daily figures with a control to switch series. | Card, LineChart | — | — | 4 | Built | FIGMA:chart-line-interactive |
+| `chart-line-label` | Charts | A line chart with each point's value. | Card, LineChart | — | — | 4 | Built | FIGMA:chart-line-label |
+| `chart-line-label-custom` | Charts | A line chart labelled with category names. | Card, LineChart | LineChart support for category labels and a colour per point | LineChart support for category labels and a colour per point | 4 | Parked | — |
+| `chart-line-linear` | Charts | A line chart with straight lines between points. | Card, LineChart | — | — | 4 | Built | FIGMA:chart-line-linear |
+| `chart-line-multiple` | Charts | A line chart with two series. | Card, LineChart | — | — | 4 | Built | FIGMA:chart-line-multiple |
+| `chart-line-step` | Charts | A line chart drawn as steps. | Card, LineChart | — | — | 4 | Built | FIGMA:chart-line-step |
 | `chart-pie-donut` | Charts | A pie chart example (donut). | Card, PieChart | PieChart | PieChart | 4 | Parked | — |
 | `chart-pie-donut-active` | Charts | A pie chart example (donut active). | Card, PieChart | PieChart | PieChart | 4 | Parked | — |
 | `chart-pie-donut-text` | Charts | A pie chart example (donut text). | Card, PieChart | PieChart | PieChart | 4 | Parked | — |
@@ -152,6 +152,9 @@ Taken on 24 November 2026 from the shadcn/ui registry (CLI 4.23.0). `app/blocks/
 ## How blocks differ from upstream
 
 - **Weekly bars:** `chart-bar-interactive` charts 13 weekly totals instead of upstream's 91 daily bars. BarChart labels every bar, and 91 labels overlap into an unreadable block. A BarChart option to hide value labels would allow the daily version.
+- **Daily line and area charts:** `chart-line-interactive` and `chart-area-interactive` chart 91 days of smooth, fixed sample figures, so screenshots are stable. `chart-area-interactive`'s time range is a labelled `Select`, and its areas have a flat 40% fill instead of upstream's gradient.
+- **Legends and axes:** `LineChart` and `AreaChart` always show a legend above the chart and a value axis. `chart-area-legend` and `chart-area-axes` therefore match `chart-area-stacked` apart from their copy; upstream's legend sits below the chart, and its default area charts hide the value axis.
+- **Curves:** upstream's smooth lines use Recharts' `natural` curve, which can overshoot the data. `curve="smooth"` uses `monotone`, which never does.
 - **Headings:** every block has one `h1`. Upstream's sidebar blocks have none, so each now has a visible page heading above its placeholder content.
 - **Labels:** search fields have visible labels; upstream hides them.
 - **Lists:** upstream's file tree (`sidebar-11`) puts buttons straight into lists; each row is now a list item.
@@ -166,9 +169,9 @@ A parked block can't be built from `@graftwork/ui` yet. Its registry entry has `
 
 | Blocks | What's missing | Where it would be added |
 | --- | --- | --- |
-| `dashboard-01` | AreaChart (interactive, with a time-range control); DataTable row reordering by drag and drop | `@graftwork/ui` (minor) |
-| 10 `chart-area-*` | AreaChart | `@graftwork/ui` (minor) |
-| 10 `chart-line-*` | LineChart | `@graftwork/ui` (minor) |
+| `dashboard-01` | DataTable row reordering by drag and drop (its interactive area chart is `chart-area-interactive`) | `@graftwork/ui` (minor) |
+| `chart-line-dots-colors`, `-dots-custom`, `-label-custom` | LineChart options: a colour per point, custom point markers, category names as labels | `@graftwork/ui` (minor) |
+| `chart-area-icons`, `chart-area-gradient` | AreaChart options: icons in the legend, gradient fills | `@graftwork/ui` (minor) |
 | 11 `chart-pie-*` | PieChart | `@graftwork/ui` (minor) |
 | 14 `chart-radar-*` | RadarChart | `@graftwork/ui` (minor) |
 | 6 `chart-radial-*` | RadialChart | `@graftwork/ui` (minor) |
@@ -176,7 +179,7 @@ A parked block can't be built from `@graftwork/ui` yet. Its registry entry has `
 | `chart-bar-active`, `-horizontal`, `-label`, `-label-custom`, `-mixed`, `-negative`, `-stacked` | BarChart options: an active bar, horizontal layout, value labels, colour per bar, negative values, stacking | `@graftwork/ui` (minor) |
 | `preview`, `preview-02`, `preview-03` | Not page layouts. They are upstream's internal theme previews (`preview-03` is an empty stub, `preview-02` also needs a QR code). `ComponentShowcase` already does this job | Not planned |
 
-Each new chart type would follow BarChart: a written summary, a "view as table" toggle, and never colour alone.
+Each new chart type or option follows BarChart, LineChart and AreaChart: a written summary and a "view as table" toggle showing the same data.
 
 ## Figma file
 
