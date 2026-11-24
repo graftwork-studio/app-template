@@ -31,6 +31,51 @@ const UPSTREAM_VERSION = "shadcn@4.23.0 (2026-11-24)";
 
 export const blocks: readonly Block[] = [
   // Built blocks: one entry per folder in app/blocks/.
+  {
+    id: "login-01",
+    title: "Log in 01",
+    category: "Login",
+    description: "A log-in form in a card.",
+    upstream: { id: "login-01", style: "aria-nova", version: UPSTREAM_VERSION },
+    figma: null,
+    status: "built",
+  },
+  {
+    id: "login-02",
+    title: "Log in 02",
+    category: "Login",
+    description: "A two-column log-in page with a cover image.",
+    upstream: { id: "login-02", style: "aria-nova", version: UPSTREAM_VERSION },
+    figma: null,
+    status: "built",
+  },
+  {
+    id: "login-03",
+    title: "Log in 03",
+    category: "Login",
+    description: "A log-in card on a muted background, with other sign-in options first.",
+    upstream: { id: "login-03", style: "aria-nova", version: UPSTREAM_VERSION },
+    figma: null,
+    status: "built",
+  },
+  {
+    id: "login-04",
+    title: "Log in 04",
+    category: "Login",
+    description: "A log-in card with the form beside an image.",
+    upstream: { id: "login-04", style: "aria-nova", version: UPSTREAM_VERSION },
+    figma: null,
+    status: "built",
+  },
+  {
+    id: "login-05",
+    title: "Log in 05",
+    category: "Login",
+    description: "An email-only log-in page.",
+    upstream: { id: "login-05", style: "aria-nova", version: UPSTREAM_VERSION },
+    figma: null,
+    status: "built",
+  },
 
   // Parked blocks: they need something @graftwork/ui doesn't have yet. See BLOCKS.md.
   {

@@ -44,7 +44,8 @@ jobs:
           node-version-file: .nvmrc
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm build
+      - name: Build with the block gallery on
+        run: pnpm build:test
       - name: Playwright (key journeys with axe; key screens at 320, 768 and 1280px in every theme)
         run: pnpm test:e2e
       - name: Upload report
