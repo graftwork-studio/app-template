@@ -53,7 +53,9 @@ for (const id of LOGIN_BLOCKS) {
   });
 }
 
-for (const id of ["chart-bar-default", "chart-bar-multiple", "chart-bar-interactive"]) {
+const CHART_BLOCKS = builtBlocks.filter((block) => block.category === "Charts").map((block) => block.id);
+
+for (const id of CHART_BLOCKS) {
   test(`${id}: the chart's data is reachable from the keyboard as a table`, async ({ page }) => {
     await page.goto(`/blocks/preview/${id}`);
     const toggle = page.getByRole("button", { name: "View as table" });
@@ -72,6 +74,30 @@ test("chart-bar-interactive: choosing a device charts its series", async ({ page
   await page.keyboard.press("Space");
   await expect(mobile).toBeChecked();
   await expect(page.getByRole("heading", { name: /^Mobile visitors/ })).toBeVisible();
+  await expectNoAxeViolations(page);
+});
+
+test("chart-line-interactive: choosing a device charts its series", async ({ page }) => {
+  await page.goto("/blocks/preview/chart-line-interactive");
+  await expect(page.getByRole("heading", { name: /^Desktop visitors a day/ })).toBeVisible();
+  const mobile = page.getByRole("radio", { name: /^Mobile/ });
+  await mobile.focus();
+  await page.keyboard.press("Space");
+  await expect(mobile).toBeChecked();
+  await expect(page.getByRole("heading", { name: /^Mobile visitors a day/ })).toBeVisible();
+  await expectNoAxeViolations(page);
+});
+
+test("chart-area-interactive: the time range changes the data, and the table matches", async ({ page }) => {
+  await page.goto("/blocks/preview/chart-area-interactive");
+  await expect(page.getByText(/over 90 days/)).toBeVisible();
+  await page.getByRole("button", { name: /Time range/ }).focus();
+  await page.keyboard.press("Enter");
+  await page.getByRole("option", { name: "Last 7 days" }).click();
+  await expect(page.getByRole("heading", { name: "Visitors by device, last 7 days" })).toBeVisible();
+  await expect(page.getByText(/over 7 days/)).toBeVisible();
+  await page.getByRole("button", { name: "View as table" }).click();
+  await expect(page.getByRole("grid").getByRole("row")).toHaveCount(8);
   await expectNoAxeViolations(page);
 });
 
