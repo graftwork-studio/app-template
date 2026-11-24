@@ -44,6 +44,28 @@ for (const id of LOGIN_BLOCKS) {
   });
 }
 
+for (const id of ["chart-bar-default", "chart-bar-multiple", "chart-bar-interactive"]) {
+  test(`${id}: the chart's data is reachable from the keyboard as a table`, async ({ page }) => {
+    await page.goto(`/blocks/preview/${id}`);
+    const toggle = page.getByRole("button", { name: "View as table" });
+    await toggle.focus();
+    await page.keyboard.press("Enter");
+    await expect(page.getByRole("grid").getByRole("rowheader").first()).toBeVisible();
+    await expect(page.getByRole("button", { name: "View as chart" })).toBeFocused();
+  });
+}
+
+test("chart-bar-interactive: choosing a device charts its series", async ({ page }) => {
+  await page.goto("/blocks/preview/chart-bar-interactive");
+  await expect(page.getByRole("heading", { name: /^Desktop visitors/ })).toBeVisible();
+  const mobile = page.getByRole("radio", { name: /^Mobile/ });
+  await mobile.focus();
+  await page.keyboard.press("Space");
+  await expect(mobile).toBeChecked();
+  await expect(page.getByRole("heading", { name: /^Mobile visitors/ })).toBeVisible();
+  await expectNoAxeViolations(page);
+});
+
 test("the gallery lists every built and parked block from the registry", async ({ page }) => {
   await page.goto("/blocks");
   await expect(page.getByRole("heading", { level: 1, name: "Blocks" })).toBeVisible();

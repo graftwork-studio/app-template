@@ -77,6 +77,34 @@ export const blocks: readonly Block[] = [
     status: "built",
   },
 
+  {
+    id: "chart-bar-default",
+    title: "Bar chart",
+    category: "Charts",
+    description: "A bar chart with one series.",
+    upstream: { id: "chart-bar-default", style: "new-york-v4", version: UPSTREAM_VERSION },
+    figma: null,
+    status: "built",
+  },
+  {
+    id: "chart-bar-multiple",
+    title: "Bar chart: multiple",
+    category: "Charts",
+    description: "A bar chart with two series side by side.",
+    upstream: { id: "chart-bar-multiple", style: "new-york-v4", version: UPSTREAM_VERSION },
+    figma: null,
+    status: "built",
+  },
+  {
+    id: "chart-bar-interactive",
+    title: "Bar chart: interactive",
+    category: "Charts",
+    description: "A bar chart with daily data and a control to switch series.",
+    upstream: { id: "chart-bar-interactive", style: "new-york-v4", version: UPSTREAM_VERSION },
+    figma: null,
+    status: "built",
+  },
+
   // Parked blocks: they need something @graftwork/ui doesn't have yet. See BLOCKS.md.
   {
     id: "chart-area-axes",

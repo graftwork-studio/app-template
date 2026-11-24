@@ -41,8 +41,8 @@ Taken on 24 November 2026 from the shadcn/ui registry (CLI 4.23.0). `app/blocks/
 | 1 (pilot) | Login | 5 | 5 | 0 | No missing components |
 | 2 | Sign-up | 5 | — | 0 | No missing components |
 | 3 | Sidebar | 16 | — | 0 | No missing components |
-| 4 | Charts | 70 | — | 67 | `chart-bar-default`, `chart-bar-multiple` and `chart-bar-interactive` can be built |
-| 5 | Dashboard and upstream previews | 4 | — | 4 | Parked |
+| 4 | Charts | 70 | 3 | 67 | `chart-bar-default`, `chart-bar-multiple` and `chart-bar-interactive` can be built |
+| 5 | Dashboard and upstream previews | 4 | 0 | 4 | Parked |
 
 ### All blocks
 
@@ -85,13 +85,13 @@ Taken on 24 November 2026 from the shadcn/ui registry (CLI 4.23.0). `app/blocks/
 | `chart-area-stacked-expand` | Charts | A area chart example (stacked expand). | Card, AreaChart | AreaChart | AreaChart | 4 | Parked | — |
 | `chart-area-step` | Charts | A area chart example (step). | Card, AreaChart | AreaChart | AreaChart | 4 | Parked | — |
 | `chart-bar-active` | Charts | A bar chart with a highlighted (active) bar. | Card, BarChart | BarChart support for a highlighted (active) bar | BarChart support for a highlighted (active) bar | 4 | Parked | — |
-| `chart-bar-default` | Charts | A bar chart with one series. | BarChart, Card | — | — | 4 | To build | — |
+| `chart-bar-default` | Charts | A bar chart with one series. | BarChart, Card | — | — | 4 | Built | — |
 | `chart-bar-horizontal` | Charts | A bar chart with horizontal bars. | Card, BarChart | BarChart support for horizontal bars | BarChart support for horizontal bars | 4 | Parked | — |
-| `chart-bar-interactive` | Charts | A bar chart with daily data and a control to switch series. | BarChart, Card, ToggleGroup | — | — | 4 | To build | — |
+| `chart-bar-interactive` | Charts | A bar chart with daily data and a control to switch series. | BarChart, Card, ToggleGroup | — | — | 4 | Built | — |
 | `chart-bar-label` | Charts | A bar chart with value labels on bars. | Card, BarChart | BarChart support for value labels on bars | BarChart support for value labels on bars | 4 | Parked | — |
 | `chart-bar-label-custom` | Charts | A bar chart with custom labels inside bars. | Card, BarChart | BarChart support for custom labels inside bars | BarChart support for custom labels inside bars | 4 | Parked | — |
 | `chart-bar-mixed` | Charts | A bar chart with a different colour per bar. | Card, BarChart | BarChart support for a different colour per bar | BarChart support for a different colour per bar | 4 | Parked | — |
-| `chart-bar-multiple` | Charts | A bar chart with two series side by side. | BarChart, Card | — | — | 4 | To build | — |
+| `chart-bar-multiple` | Charts | A bar chart with two series side by side. | BarChart, Card | — | — | 4 | Built | — |
 | `chart-bar-negative` | Charts | A bar chart with negative values with their own colour. | Card, BarChart | BarChart support for negative values with their own colour | BarChart support for negative values with their own colour | 4 | Parked | — |
 | `chart-bar-stacked` | Charts | A bar chart with stacked series. | Card, BarChart | BarChart support for stacked series | BarChart support for stacked series | 4 | Parked | — |
 | `chart-line-default` | Charts | A line chart example (default). | Card, LineChart | LineChart | LineChart | 4 | Parked | — |
@@ -148,6 +148,7 @@ Taken on 24 November 2026 from the shadcn/ui registry (CLI 4.23.0). `app/blocks/
 | `preview` | Upstream previews | Upstream’s theme preview for its “create” page: a grid of component examples. | — | — | — | 5 | Parked | — |
 | `preview-02` | Upstream previews | Upstream’s second theme preview: a grid of component examples, including a QR code. | — | — | — | 5 | Parked | — |
 | `preview-03` | Upstream previews | An empty upstream stub (it renders “Preview 03”). | — | — | — | 5 | Parked | — |
+- **Weekly bars:** `chart-bar-interactive` charts 13 weekly totals instead of upstream's 91 daily bars. BarChart labels every bar, and 91 labels overlap into an unreadable block. A BarChart option to hide value labels would allow the daily version.
 
 ## Parked blocks
 
