@@ -12,7 +12,7 @@ New apps get blocks through this template. Apps created earlier don't receive th
 ## Adding or changing a block
 
 1. Fetch the upstream block in a scratch folder outside this repository (for example `npx shadcn@latest view <id>`, or the registry JSON at `https://ui.shadcn.com/r/styles/aria-nova/<id>.json`). Never run `shadcn add` here.
-2. Rebuild it in `app/blocks/<id>/block.tsx` from `@graftwork/ui` components, with our prop names (see the Figma table in `CLAUDE.md`). Export the block as the file's default export and add it to `app/blocks/components.ts`.
+2. Rebuild it in `app/blocks/<id>/block.tsx` from `@graftwork/ui` components. A sidebar page starts from `AppShell` and a log-in or sign-up page from `AuthLayout`. Then use our components, with our prop names (see the Figma table in `CLAUDE.md`). Export the block as the file's default export and add it to `app/blocks/components.ts`.
 3. Use semantic token classes only. If an upstream class has no token equivalent, leave it out and say so in the pull request.
 4. Replace the copy and sample data with neutral placeholders: no real brands, people, photos or third-party names. Provider buttons ("Continue with …") use neutral text and a generic icon, and photos become a neutral placeholder.
 5. Apply the accessibility rules: visible labels, errors as text linked to the field, 24 × 24px targets, underlined links, no sideways scrolling from 320px, sticky parts clear of focus (the `scroll-padding` tokens), charts with a summary and table view, and motion that respects `prefers-reduced-motion`. Every block has one `h1`.
@@ -188,6 +188,7 @@ Known differences from the code:
 - **Spacing without a token:** the code's 20px form gap (`gap-5`) and 40px page padding (`md:p-10`) come from Tailwind's numeric scale, which has no matching `space` variable, so Figma uses the raw values.
 - **Input text size:** below 768px the code's inputs use 16px text so iOS doesn't zoom in. The Figma Input is always 14px.
 - **Status message:** each form's empty `role="status"` line, used for announcements, isn't drawn.
+- **Page layouts:** in code, the sidebar blocks use `AppShell` (except `sidebar-16`) and the log-in and sign-up blocks use `AuthLayout`. In Figma they're built from frames with the same structure and layer names as those components, not from instances of them. Figma has no slots, so an instance would need its sample sidebar or form swapped out and heavily overridden. Each block's description says which layout the code uses.
 
 ## Keeping Figma in step
 
@@ -195,6 +196,8 @@ The code here is the source of truth. Figma is built from it.
 
 - **When a block changes in this template,** update its component set in the Graftwork Blocks file to match (compare a screenshot of `/blocks/preview/<id>` with the Figma block at the same width and theme), then publish the library from **Assets → library icon → Publish**.
 - **When a design-system release changes tokens or components,** open Graftwork Blocks after the Graftwork Design System library is published, accept the library updates, and check the blocks in Light, Dark and High contrast. Republish if anything changed.
+- **When a release changes `AppShell` or `AuthLayout`,** check the blocks built on them in code (`/blocks`) and their Figma components, which follow the same structure.
+- **Publishing:** Figma's publish dialog doesn't list a change that only edits a component's description. That's fine to leave: it goes out with the next change Figma does list.
 - **Each component set's description** gives the block id, its path (`app/blocks/<id>`), the upstream id, and the date and `@graftwork/ui` version it was built from. Update it when you rebuild a block.
 
 ## Promotion candidates
