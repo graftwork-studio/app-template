@@ -77,6 +77,52 @@ export const blocks: readonly Block[] = [
     status: "built",
   },
 
+  {
+    id: "signup-01",
+    title: "Sign up 01",
+    category: "Sign-up",
+    description: "A sign-up form in a card.",
+    upstream: { id: "signup-01", style: "aria-nova", version: UPSTREAM_VERSION },
+    figma: null,
+    status: "built",
+  },
+  {
+    id: "signup-02",
+    title: "Sign up 02",
+    category: "Sign-up",
+    description: "A two-column sign-up page with a cover image.",
+    upstream: { id: "signup-02", style: "aria-nova", version: UPSTREAM_VERSION },
+    figma: null,
+    status: "built",
+  },
+  {
+    id: "signup-03",
+    title: "Sign up 03",
+    category: "Sign-up",
+    description: "A sign-up card on a muted background.",
+    upstream: { id: "signup-03", style: "aria-nova", version: UPSTREAM_VERSION },
+    figma: null,
+    status: "built",
+  },
+  {
+    id: "signup-04",
+    title: "Sign up 04",
+    category: "Sign-up",
+    description: "A sign-up card with the form beside an image.",
+    upstream: { id: "signup-04", style: "aria-nova", version: UPSTREAM_VERSION },
+    figma: null,
+    status: "built",
+  },
+  {
+    id: "signup-05",
+    title: "Sign up 05",
+    category: "Sign-up",
+    description: "A sign-up form with other sign-up options.",
+    upstream: { id: "signup-05", style: "aria-nova", version: UPSTREAM_VERSION },
+    figma: null,
+    status: "built",
+  },
+
   // Parked blocks: they need something @graftwork/ui doesn't have yet. See BLOCKS.md.
   {
     id: "chart-area-axes",

@@ -44,6 +44,63 @@ for (const id of LOGIN_BLOCKS) {
   });
 }
 
+const SIGNUP_FULL = ["signup-01", "signup-02", "signup-03", "signup-04"];
+
+for (const id of SIGNUP_FULL) {
+  test(`${id}: errors are text, linked to their fields, and the form works from the keyboard`, async ({ page }) => {
+    await page.goto(`/blocks/preview/${id}`);
+    await expect(page.getByRole("heading", { level: 1 })).toHaveCount(1);
+    const submit = page.getByRole("button", { name: "Create account" });
+    const email = page.getByRole("textbox", { name: /^Email/ });
+    const password = page.getByLabel(/^Password/);
+    const confirm = page.getByLabel(/^Confirm password/);
+
+    await submit.focus();
+    await page.keyboard.press("Enter");
+    await expect(email).toHaveAttribute("aria-invalid", "true");
+    await expect(email).toHaveAccessibleDescription(/Enter your email address\./);
+    await expect(password).toHaveAccessibleDescription(/at least 8 characters/);
+    await expect(confirm).toHaveAccessibleDescription(/Enter your password again\./);
+    await expectNoAxeViolations(page);
+
+    // Fill every field with the keyboard, with a confirmation that doesn't match.
+    const name = page.getByRole("textbox", { name: /^Full name/ });
+    if ((await name.count()) > 0) {
+      await name.focus();
+      await page.keyboard.type("Sam Taylor");
+    }
+    await email.focus();
+    await page.keyboard.type("name@example.com");
+    await password.focus();
+    await page.keyboard.type("sample-password");
+    await confirm.focus();
+    await page.keyboard.type("different");
+    await submit.focus();
+    await page.keyboard.press("Enter");
+    await expect(confirm).toHaveAccessibleDescription(/The passwords don’t match\./);
+
+    await confirm.fill("");
+    await confirm.focus();
+    await page.keyboard.type("sample-password");
+    await submit.focus();
+    await page.keyboard.press("Enter");
+    await expect(page.getByRole("status")).toHaveText(/sample block/);
+  });
+}
+
+test("signup-05: the email-only form validates and works from the keyboard", async ({ page }) => {
+  await page.goto("/blocks/preview/signup-05");
+  const email = page.getByRole("textbox", { name: /^Email/ });
+  await page.getByRole("button", { name: "Create account" }).focus();
+  await page.keyboard.press("Enter");
+  await expect(email).toHaveAccessibleDescription(/Enter your email address\./);
+  await email.focus();
+  await page.keyboard.type("name@example.com");
+  await page.getByRole("button", { name: "Create account" }).focus();
+  await page.keyboard.press("Enter");
+  await expect(page.getByRole("status")).toHaveText(/sample block/);
+});
+
 test("the gallery lists every built and parked block from the registry", async ({ page }) => {
   await page.goto("/blocks");
   await expect(page.getByRole("heading", { level: 1, name: "Blocks" })).toBeVisible();
