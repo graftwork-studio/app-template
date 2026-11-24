@@ -39,7 +39,7 @@ Taken on 24 November 2026 from the shadcn/ui registry (CLI 4.23.0). `app/blocks/
 | Batch | Category | Blocks | Built | Parked | Notes |
 | --- | --- | --- | --- | --- | --- |
 | 1 (pilot) | Login | 5 | 5 | 0 | No missing components |
-| 2 | Sign-up | 5 | — | 0 | No missing components |
+| 2 | Sign-up | 5 | 5 | 0 | No missing components |
 | 3 | Sidebar | 16 | — | 0 | No missing components |
 | 4 | Charts | 70 | — | 67 | `chart-bar-default`, `chart-bar-multiple` and `chart-bar-interactive` can be built |
 | 5 | Dashboard and upstream previews | 4 | — | 4 | Parked |
@@ -53,11 +53,11 @@ Taken on 24 November 2026 from the shadcn/ui registry (CLI 4.23.0). `app/blocks/
 | `login-03` | Login | A log-in card on a muted background, with other sign-in options first. | Button, Card, Field, Input, Label | — | — | 1 | Built | [login-03](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=5-459) |
 | `login-04` | Login | A log-in card with the form beside an image. | Button, Card, Field, Input, Label | — | — | 1 | Built | [login-04](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=5-667) |
 | `login-05` | Login | An email-only log-in page. | Button, Field, Input, Label | — | — | 1 | Built | [login-05](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=5-812) |
-| `signup-01` | Sign-up | A sign-up form in a card. | Button, Card, Field, Input, Label | — | — | 2 | To build | — |
-| `signup-02` | Sign-up | A two-column sign-up page with a cover image. | Button, Field, Input, Label | — | — | 2 | To build | — |
-| `signup-03` | Sign-up | A sign-up card on a muted background. | Button, Card, Field, Input, Label | — | — | 2 | To build | — |
-| `signup-04` | Sign-up | A sign-up card with the form beside an image. | Button, Card, Field, Input, Label | — | — | 2 | To build | — |
-| `signup-05` | Sign-up | A sign-up form with other sign-up options. | Button, Field, Input, Label | — | — | 2 | To build | — |
+| `signup-01` | Sign-up | A sign-up form in a card. | Button, Card, Field, Input, Label | — | — | 2 | Built | [signup-01](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=14-204) |
+| `signup-02` | Sign-up | A two-column sign-up page with a cover image. | Button, Field, Input, Label | — | — | 2 | Built | [signup-02](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=14-439) |
+| `signup-03` | Sign-up | A sign-up card on a muted background. | Button, Card, Field, Input, Label | — | — | 2 | Built | [signup-03](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=14-647) |
+| `signup-04` | Sign-up | A sign-up card with the form beside an image. | Button, Card, Field, Input, Label | — | — | 2 | Built | [signup-04](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=14-879) |
+| `signup-05` | Sign-up | A sign-up form with other sign-up options. | Button, Field, Input, Label | — | — | 2 | Built | [signup-05](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=14-1024) |
 | `sidebar-01` | Sidebar | A sidebar with navigation grouped by section. | Breadcrumb, DropdownMenu, Label, Separator, Sidebar | — | — | 3 | To build | — |
 | `sidebar-02` | Sidebar | A sidebar with collapsible sections. | Breadcrumb, DropdownMenu, Label, Separator, Sidebar | — | — | 3 | To build | — |
 | `sidebar-03` | Sidebar | A sidebar with submenus. | Breadcrumb, Sidebar | — | — | 3 | To build | — |
@@ -148,6 +148,10 @@ Taken on 24 November 2026 from the shadcn/ui registry (CLI 4.23.0). `app/blocks/
 | `preview` | Upstream previews | Upstream’s theme preview for its “create” page: a grid of component examples. | — | — | — | 5 | Parked | — |
 | `preview-02` | Upstream previews | Upstream’s second theme preview: a grid of component examples, including a QR code. | — | — | — | 5 | Parked | — |
 | `preview-03` | Upstream previews | An empty upstream stub (it renders “Preview 03”). | — | — | — | 5 | Parked | — |
+
+## How blocks differ from upstream
+
+- **Passwords:** upstream's `signup-03` and `signup-04` put the password and its confirmation side by side, with one shared hint under both that isn't linked to either field. They're stacked here, each with its own linked hint.
 
 ## Parked blocks
 
