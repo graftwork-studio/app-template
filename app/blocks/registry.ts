@@ -83,7 +83,7 @@ export const blocks: readonly Block[] = [
     category: "Sign-up",
     description: "A sign-up form in a card.",
     upstream: { id: "signup-01", style: "aria-nova", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=14-204",
     status: "built",
   },
   {
@@ -92,7 +92,7 @@ export const blocks: readonly Block[] = [
     category: "Sign-up",
     description: "A two-column sign-up page with a cover image.",
     upstream: { id: "signup-02", style: "aria-nova", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=14-439",
     status: "built",
   },
   {
@@ -101,7 +101,7 @@ export const blocks: readonly Block[] = [
     category: "Sign-up",
     description: "A sign-up card on a muted background.",
     upstream: { id: "signup-03", style: "aria-nova", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=14-647",
     status: "built",
   },
   {
@@ -110,7 +110,7 @@ export const blocks: readonly Block[] = [
     category: "Sign-up",
     description: "A sign-up card with the form beside an image.",
     upstream: { id: "signup-04", style: "aria-nova", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=14-879",
     status: "built",
   },
   {
@@ -119,7 +119,7 @@ export const blocks: readonly Block[] = [
     category: "Sign-up",
     description: "A sign-up form with other sign-up options.",
     upstream: { id: "signup-05", style: "aria-nova", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=14-1024",
     status: "built",
   },
 
