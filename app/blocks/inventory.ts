@@ -29,7 +29,7 @@ export type InventoryBlock = {
 };
 
 /** Batches whose blocks must all be built or parked. Raise it as each batch lands. */
-export const COMPLETED_BATCHES: ReadonlySet<InventoryBlock["batch"]> = new Set<InventoryBlock["batch"]>([1, 2]);
+export const COMPLETED_BATCHES: ReadonlySet<InventoryBlock["batch"]> = new Set<InventoryBlock["batch"]>([1, 2, 3]);
 
 export const inventory: readonly InventoryBlock[] = [
   { id: "login-01", category: "Login", description: "A log-in form in a card.", components: ["Button", "Card", "Field", "Input", "Label"], missingCode: [], missingFigma: [], upstreamBase: "aria", batch: 1 },
