@@ -101,6 +101,15 @@ Where Figma and code differ:
 
 Use Figma variables by their token names. A fill bound to `text/secondary` is `text-text-secondary`.
 
+## Blocks
+
+Blocks are whole page layouts in `app/blocks/<id>/` (log-in pages, sidebars and so on), rebuilt from shadcn/ui's blocks. They're starting points: copy one into your route and edit it.
+
+- Blocks use `@graftwork/ui` components and semantic tokens only, like every other screen. Lint covers `app/blocks/**` with the same rules.
+- To add or change one, follow `BLOCKS.md`. `app/blocks/registry.ts` lists every block and drives the gallery at `/blocks` and the tests.
+- Never run `shadcn add`, for blocks or anything else. Upstream blocks are a reference only, fetched outside this repository.
+- A block's Figma component, in the Graftwork Blocks library, has the same name as its id (for example `login-01`).
+
 ## Accessibility
 
 The components already meet the standard. Keep it that way:
