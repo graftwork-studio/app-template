@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  AppShell,
   Breadcrumb,
   BreadcrumbItem,
   Button,
@@ -12,11 +13,9 @@ import {
   SidebarContent,
   SidebarGroup,
   SidebarGroupContent,
-  SidebarInset,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarProvider,
 } from "@graftwork/ui";
 import {
   BellIcon,
@@ -57,26 +56,32 @@ export function SettingsDialog() {
       <DialogContent size="lg" className="overflow-hidden p-0 md:max-w-3xl">
         <DialogTitle className="sr-only">Settings</DialogTitle>
         <DialogDescription className="sr-only">Change your settings here.</DialogDescription>
-        <SidebarProvider keyboardShortcut={false} className="min-h-0 items-start">
-          <Sidebar collapsible="none" aria-label="Settings sections" className="hidden md:flex">
-            <SidebarContent>
-              <SidebarGroup>
-                <SidebarGroupContent>
-                  <SidebarMenu>
-                    {nav.map((item) => (
-                      <SidebarMenuItem key={item.name}>
-                        <SidebarMenuButton href={slug(item.name)} isActive={item.name === "Messages and media"}>
-                          <item.icon aria-hidden />
-                          <span>{item.name}</span>
-                        </SidebarMenuButton>
-                      </SidebarMenuItem>
-                    ))}
-                  </SidebarMenu>
-                </SidebarGroupContent>
-              </SidebarGroup>
-            </SidebarContent>
-          </Sidebar>
-          <SidebarInset elementType="div" className="flex h-120 flex-1 flex-col overflow-hidden">
+        <AppShell
+          mainElement="div"
+          keyboardShortcut={false}
+          className="min-h-0 items-start"
+          sidebar={
+            <Sidebar collapsible="none" aria-label="Settings sections" className="hidden md:flex">
+              <SidebarContent>
+                <SidebarGroup>
+                  <SidebarGroupContent>
+                    <SidebarMenu>
+                      {nav.map((item) => (
+                        <SidebarMenuItem key={item.name}>
+                          <SidebarMenuButton href={slug(item.name)} isActive={item.name === "Messages and media"}>
+                            <item.icon aria-hidden />
+                            <span>{item.name}</span>
+                          </SidebarMenuButton>
+                        </SidebarMenuItem>
+                      ))}
+                    </SidebarMenu>
+                  </SidebarGroupContent>
+                </SidebarGroup>
+              </SidebarContent>
+            </Sidebar>
+          }
+        >
+          <div className="flex h-120 flex-col overflow-hidden">
             <div className="flex h-16 shrink-0 items-center gap-2 px-4">
               <Breadcrumb>
                 <BreadcrumbItem href="#settings" className="hidden md:flex">
@@ -90,8 +95,8 @@ export function SettingsDialog() {
                 <div key={index} className="aspect-video max-w-3xl rounded-xl bg-surface-subtle" />
               ))}
             </div>
-          </SidebarInset>
-        </SidebarProvider>
+          </div>
+        </AppShell>
       </DialogContent>
     </Dialog>
   );

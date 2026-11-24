@@ -25,6 +25,8 @@ Map Figma components to code by matching names. A Figma component called `Button
 | Accordion | `allowsMultipleExpanded` · AccordionItem `isExpanded`, `isDisabled`, `title`, `content` |
 | Alert | `variant`: info, success, warning, error · `title`, `children`, `action` |
 | AlertDialog | `size`: sm, md, lg · `AlertDialogTitle`, `AlertDialogDescription` |
+| AppShell | `variant`: sidebar, floating, inset · `state`: expanded, collapsed · `showSidebarEnd` · AppShellHeader `showActions` |
+| AuthLayout | `layout`: centered, split · `background`: default, muted · `size`: sm, lg · `showBrand`, `showFooter`, `showAside` |
 | Avatar | `size`: sm, md, lg · `initials` · AvatarGroup `more` |
 | Badge | `variant`: neutral, info, success, warning, error, outline · `children` |
 | Breadcrumb | BreadcrumbItem `isCurrent`, `children` |
@@ -87,7 +89,7 @@ Where Figma and code differ:
 
 - **Labels:** `label` on Checkbox, Radio and Switch is `children` in code. On Toggle, Badge, Kbd, Label and Tooltip, `children` is the text.
 - **Layers, not props:** `DialogTitle`, `SheetTitle`, `PopoverTitle`, `TabPanel` and similar are the matching code components. Accordion's `title` and `content` are AccordionTrigger and AccordionContent. Collapsible's `trigger` and `content` are CollapsibleTrigger and CollapsibleContent.
-- **Slots:** Figma can't take a component as a property. `startAddon`, `endAddon`, `action`, `icon` and `showShortcut` show or hide a slot, and `startAddonText` and `endAddonText` hold its text. In code, pass the content itself (`shortcut`, `startAddon`, `action`).
+- **Slots:** Figma can't take a component as a property. `startAddon`, `endAddon`, `action`, `icon` and `showShortcut` show or hide a slot, and `startAddonText` and `endAddonText` hold its text. In code, pass the content itself (`shortcut`, `startAddon`, `action`). AppShell's `showSidebarEnd` is its `sidebarEnd` slot and AppShellHeader's `showActions` is `actions`; AuthLayout's `showBrand`, `showFooter` and `showAside` are `brand`, `footer` and `aside`. AppShell's `variant` and `state` are set on the Sidebar you pass in.
 - **Avatar:** `initials` come from `name` in code. Add a photo in Figma as an image fill; in code it's `src`.
 - **Breadcrumb:** `isCurrent` means the item has no `href` in code.
 - **Toast:** pass `title`, `description` and `variant` to `toast()`, with one `<Toaster />` in the app.
@@ -109,6 +111,7 @@ Blocks are whole page layouts in `app/blocks/<id>/` (log-in pages, sidebars and 
 - To add or change one, follow `BLOCKS.md`. `app/blocks/registry.ts` lists every block and drives the gallery at `/blocks` and the tests.
 - Never run `shadcn add`, for blocks or anything else. Upstream blocks are a reference only, fetched outside this repository.
 - A block's Figma component, in the Graftwork Blocks library, has the same name as its id (for example `login-01`).
+- Page layouts use `AppShell` (sidebar pages) and `AuthLayout` (log-in and sign-up pages) from `@graftwork/ui`. Start new pages from them rather than rebuilding the layout.
 
 ## Accessibility
 
