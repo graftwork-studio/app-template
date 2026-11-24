@@ -73,7 +73,7 @@ test("gallery search filters blocks, and width and theme change the preview", as
   await page.getByRole("option", { name: "Dark" }).click();
   await expect(entry.locator("iframe")).toHaveAttribute("src", "/blocks/preview/login-03?theme=dark");
   await expect(entry.getByRole("link", { name: /full size/ })).toHaveAttribute("href", "/blocks/preview/login-03?theme=dark");
-  await expect(entry.getByText("Not in Figma yet")).toBeVisible();
+  await expect(entry.getByRole("link", { name: "Open Log in 03 in Figma" })).toHaveAttribute("href", /figma\.com\/design\//);
 });
 
 test("a preview's theme comes from ?theme= and isn't stored", async ({ page }) => {

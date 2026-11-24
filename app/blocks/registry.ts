@@ -37,7 +37,7 @@ export const blocks: readonly Block[] = [
     category: "Login",
     description: "A log-in form in a card.",
     upstream: { id: "login-01", style: "aria-nova", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=4-523",
     status: "built",
   },
   {
@@ -46,7 +46,7 @@ export const blocks: readonly Block[] = [
     category: "Login",
     description: "A two-column log-in page with a cover image.",
     upstream: { id: "login-02", style: "aria-nova", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=5-254",
     status: "built",
   },
   {
@@ -55,7 +55,7 @@ export const blocks: readonly Block[] = [
     category: "Login",
     description: "A log-in card on a muted background, with other sign-in options first.",
     upstream: { id: "login-03", style: "aria-nova", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=5-459",
     status: "built",
   },
   {
@@ -64,7 +64,7 @@ export const blocks: readonly Block[] = [
     category: "Login",
     description: "A log-in card with the form beside an image.",
     upstream: { id: "login-04", style: "aria-nova", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=5-667",
     status: "built",
   },
   {
@@ -73,7 +73,7 @@ export const blocks: readonly Block[] = [
     category: "Login",
     description: "An email-only log-in page.",
     upstream: { id: "login-05", style: "aria-nova", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=5-812",
     status: "built",
   },
 

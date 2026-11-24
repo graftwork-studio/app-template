@@ -38,7 +38,7 @@ Taken on 24 November 2026 from the shadcn/ui registry (CLI 4.23.0). `app/blocks/
 
 | Batch | Category | Blocks | Built | Parked | Notes |
 | --- | --- | --- | --- | --- | --- |
-| 1 (pilot) | Login | 5 | — | 0 | No missing components |
+| 1 (pilot) | Login | 5 | 5 | 0 | No missing components |
 | 2 | Sign-up | 5 | — | 0 | No missing components |
 | 3 | Sidebar | 16 | — | 0 | No missing components |
 | 4 | Charts | 70 | — | 67 | `chart-bar-default`, `chart-bar-multiple` and `chart-bar-interactive` can be built |
@@ -48,11 +48,11 @@ Taken on 24 November 2026 from the shadcn/ui registry (CLI 4.23.0). `app/blocks/
 
 | Block | Category | Description | Components | Missing in code | Missing in Figma | Batch | Status | Figma |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `login-01` | Login | A log-in form in a card. | Button, Card, Field, Input, Label | — | — | 1 | To build | — |
-| `login-02` | Login | A two-column log-in page with a cover image. | Button, Field, Input, Label | — | — | 1 | To build | — |
-| `login-03` | Login | A log-in card on a muted background, with other sign-in options first. | Button, Card, Field, Input, Label | — | — | 1 | To build | — |
-| `login-04` | Login | A log-in card with the form beside an image. | Button, Card, Field, Input, Label | — | — | 1 | To build | — |
-| `login-05` | Login | An email-only log-in page. | Button, Field, Input, Label | — | — | 1 | To build | — |
+| `login-01` | Login | A log-in form in a card. | Button, Card, Field, Input, Label | — | — | 1 | Built | [login-01](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=4-523) |
+| `login-02` | Login | A two-column log-in page with a cover image. | Button, Field, Input, Label | — | — | 1 | Built | [login-02](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=5-254) |
+| `login-03` | Login | A log-in card on a muted background, with other sign-in options first. | Button, Card, Field, Input, Label | — | — | 1 | Built | [login-03](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=5-459) |
+| `login-04` | Login | A log-in card with the form beside an image. | Button, Card, Field, Input, Label | — | — | 1 | Built | [login-04](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=5-667) |
+| `login-05` | Login | An email-only log-in page. | Button, Field, Input, Label | — | — | 1 | Built | [login-05](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=5-812) |
 | `signup-01` | Sign-up | A sign-up form in a card. | Button, Card, Field, Input, Label | — | — | 2 | To build | — |
 | `signup-02` | Sign-up | A two-column sign-up page with a cover image. | Button, Field, Input, Label | — | — | 2 | To build | — |
 | `signup-03` | Sign-up | A sign-up card on a muted background. | Button, Card, Field, Input, Label | — | — | 2 | To build | — |
@@ -166,6 +166,17 @@ A parked block can't be built from `@graftwork/ui` yet. Its registry entry has `
 | `preview`, `preview-02`, `preview-03` | Not page layouts. They are upstream's internal theme previews (`preview-03` is an empty stub, `preview-02` also needs a QR code). `ComponentShowcase` already does this job | Not planned |
 
 Each new chart type would follow BarChart: a written summary, a "view as table" toggle, and never colour alone.
+
+## Figma file
+
+[Graftwork Blocks](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks) has a `Blocks: read me` page, then one page per category. Each block is one component set named after its id, with a `breakpoint` property (`desktop` 1280, `tablet` 768, `mobile` 320), text properties for its headings and `show…` booleans for optional parts. Blocks are built by script from instances of the Graftwork Design System components, with every colour, radius, font size and most spacing bound to its variables. Themes come from the `Graftwork colour` modes.
+
+Known differences from the code:
+
+- **Card:** the library's Card holds text only, so a block's card is a frame bound to the same variables as Card (`surface/raised`, `border/default`, `radius/xl`, `space/md`), with `CardHeader` and `CardContent` layers.
+- **Spacing without a token:** the code's 20px form gap (`gap-5`) and 40px page padding (`md:p-10`) come from Tailwind's numeric scale, which has no matching `space` variable, so Figma uses the raw values.
+- **Input text size:** below 768px the code's inputs use 16px text so iOS doesn't zoom in. The Figma Input is always 14px.
+- **Status message:** each form's empty `role="status"` line, used for announcements, isn't drawn.
 
 ## Keeping Figma in step
 
