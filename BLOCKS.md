@@ -32,7 +32,7 @@ Taken on 24 November 2026 from the shadcn/ui registry (CLI 4.23.0). `app/blocks/
 
 - **Page blocks (30):** upstream offers 27 page blocks plus 3 internal previews for the React Aria base (`aria-nova` style). The Radix (`radix-nova`) and Base UI (`base-nova`) styles offer the same 30. All 27 page blocks use components we have, apart from `dashboard-01`'s draggable table rows.
 - **Chart blocks (70):** upstream offers these for the Radix base only (`new-york-v4`). They don't exist in the `aria-nova` registry. They are Recharts examples in a card. 18 can be built with `BarChart`, `LineChart` and `AreaChart`; the rest need other chart types or options.
-- **Figma:** all 67 `@graftwork/ui` components are in the Graftwork Design System library (`PROGRESS.md` predates the last ten being published). The Figma library has BarChart, LineChart and AreaChart, so "Missing in Figma" matches "Missing in code" for charts.
+- **Figma:** all 71 `@graftwork/ui` components are in the Graftwork Design System library. The Figma library has BarChart, LineChart and AreaChart, so "Missing in Figma" matches "Missing in code" for charts.
 
 ### Build batches
 
