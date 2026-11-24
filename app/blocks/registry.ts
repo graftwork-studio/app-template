@@ -99,7 +99,7 @@ export const blocks: readonly Block[] = [
     id: "chart-bar-interactive",
     title: "Bar chart: interactive",
     category: "Charts",
-    description: "A bar chart with daily data and a control to switch series.",
+    description: "A bar chart with a control to switch series, with weekly totals.",
     upstream: { id: "chart-bar-interactive", style: "new-york-v4", version: UPSTREAM_VERSION },
     figma: null,
     status: "built",
