@@ -34,3 +34,16 @@ export async function expectNoSidewaysScroll(page: Page) {
     })
     .toBeLessThanOrEqual(0);
 }
+
+/** Waits until open overlays (sheets, dialogs) have finished fading in, so axe measures their real colours. */
+export async function waitForOverlays(page: Page) {
+  await expect
+    .poll(() =>
+      page.evaluate(() =>
+        [...document.querySelectorAll('[data-slot*="overlay"], [data-entering]')].every(
+          (el) => !el.hasAttribute("data-entering") && getComputedStyle(el).opacity === "1",
+        ),
+      ),
+    )
+    .toBe(true);
+}

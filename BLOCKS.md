@@ -40,7 +40,7 @@ Taken on 24 November 2026 from the shadcn/ui registry (CLI 4.23.0). `app/blocks/
 | --- | --- | --- | --- | --- | --- |
 | 1 (pilot) | Login | 5 | 5 | 0 | No missing components |
 | 2 | Sign-up | 5 | — | 0 | No missing components |
-| 3 | Sidebar | 16 | — | 0 | No missing components |
+| 3 | Sidebar | 16 | 16 | 0 | No missing components |
 | 4 | Charts | 70 | — | 67 | `chart-bar-default`, `chart-bar-multiple` and `chart-bar-interactive` can be built |
 | 5 | Dashboard and upstream previews | 4 | — | 4 | Parked |
 
@@ -58,22 +58,22 @@ Taken on 24 November 2026 from the shadcn/ui registry (CLI 4.23.0). `app/blocks/
 | `signup-03` | Sign-up | A sign-up card on a muted background. | Button, Card, Field, Input, Label | — | — | 2 | To build | — |
 | `signup-04` | Sign-up | A sign-up card with the form beside an image. | Button, Card, Field, Input, Label | — | — | 2 | To build | — |
 | `signup-05` | Sign-up | A sign-up form with other sign-up options. | Button, Field, Input, Label | — | — | 2 | To build | — |
-| `sidebar-01` | Sidebar | A sidebar with navigation grouped by section. | Breadcrumb, DropdownMenu, Label, Separator, Sidebar | — | — | 3 | To build | — |
-| `sidebar-02` | Sidebar | A sidebar with collapsible sections. | Breadcrumb, DropdownMenu, Label, Separator, Sidebar | — | — | 3 | To build | — |
-| `sidebar-03` | Sidebar | A sidebar with submenus. | Breadcrumb, Sidebar | — | — | 3 | To build | — |
-| `sidebar-04` | Sidebar | A floating sidebar with submenus. | Breadcrumb, Separator, Sidebar | — | — | 3 | To build | — |
-| `sidebar-05` | Sidebar | A sidebar with collapsible submenus. | Breadcrumb, Collapsible, Label, Separator, Sidebar | — | — | 3 | To build | — |
-| `sidebar-06` | Sidebar | A sidebar with submenus as dropdown menus. | Breadcrumb, Card, DropdownMenu, Separator, Sidebar | — | — | 3 | To build | — |
-| `sidebar-07` | Sidebar | A sidebar that collapses to icons. | Avatar, Breadcrumb, Collapsible, DropdownMenu, Separator, Sidebar | — | — | 3 | To build | — |
-| `sidebar-08` | Sidebar | An inset sidebar with secondary navigation. | Avatar, Breadcrumb, Collapsible, DropdownMenu, Separator, Sidebar | — | — | 3 | To build | — |
-| `sidebar-09` | Sidebar | Collapsible nested sidebars. | Avatar, Breadcrumb, Collapsible, DropdownMenu, Label, Separator, Sidebar, Switch | — | — | 3 | To build | — |
-| `sidebar-10` | Sidebar | A sidebar in a popover. | Breadcrumb, Collapsible, DropdownMenu, Popover, Separator, Sidebar | — | — | 3 | To build | — |
-| `sidebar-11` | Sidebar | A sidebar with a collapsible file tree. | Breadcrumb, Collapsible, Separator, Sidebar | — | — | 3 | To build | — |
-| `sidebar-12` | Sidebar | A sidebar with a calendar. | Avatar, Breadcrumb, Calendar, Collapsible, DropdownMenu, Separator, Sidebar | — | — | 3 | To build | — |
-| `sidebar-13` | Sidebar | A sidebar in a dialog. | Breadcrumb, Button, Dialog, Sidebar | — | — | 3 | To build | — |
-| `sidebar-14` | Sidebar | A sidebar on the right. | Breadcrumb, Sidebar | — | — | 3 | To build | — |
-| `sidebar-15` | Sidebar | A left and a right sidebar. | Avatar, Breadcrumb, Calendar, Collapsible, DropdownMenu, Popover, Separator, Sidebar | — | — | 3 | To build | — |
-| `sidebar-16` | Sidebar | A sidebar with a sticky site header. | Avatar, Breadcrumb, Button, Collapsible, DropdownMenu, Label, Separator, Sidebar | — | — | 3 | To build | — |
+| `sidebar-01` | Sidebar | A sidebar with navigation grouped by section. | Breadcrumb, DropdownMenu, Label, Separator, Sidebar | — | — | 3 | Built | — |
+| `sidebar-02` | Sidebar | A sidebar with collapsible sections. | Breadcrumb, DropdownMenu, Label, Separator, Sidebar | — | — | 3 | Built | — |
+| `sidebar-03` | Sidebar | A sidebar with submenus. | Breadcrumb, Sidebar | — | — | 3 | Built | — |
+| `sidebar-04` | Sidebar | A floating sidebar with submenus. | Breadcrumb, Separator, Sidebar | — | — | 3 | Built | — |
+| `sidebar-05` | Sidebar | A sidebar with collapsible submenus. | Breadcrumb, Collapsible, Label, Separator, Sidebar | — | — | 3 | Built | — |
+| `sidebar-06` | Sidebar | A sidebar with submenus as dropdown menus. | Breadcrumb, Card, DropdownMenu, Separator, Sidebar | — | — | 3 | Built | — |
+| `sidebar-07` | Sidebar | A sidebar that collapses to icons. | Avatar, Breadcrumb, Collapsible, DropdownMenu, Separator, Sidebar | — | — | 3 | Built | — |
+| `sidebar-08` | Sidebar | An inset sidebar with secondary navigation. | Avatar, Breadcrumb, Collapsible, DropdownMenu, Separator, Sidebar | — | — | 3 | Built | — |
+| `sidebar-09` | Sidebar | Collapsible nested sidebars. | Avatar, Breadcrumb, Collapsible, DropdownMenu, Label, Separator, Sidebar, Switch | — | — | 3 | Built | — |
+| `sidebar-10` | Sidebar | A sidebar in a popover. | Breadcrumb, Collapsible, DropdownMenu, Popover, Separator, Sidebar | — | — | 3 | Built | — |
+| `sidebar-11` | Sidebar | A sidebar with a collapsible file tree. | Breadcrumb, Collapsible, Separator, Sidebar | — | — | 3 | Built | — |
+| `sidebar-12` | Sidebar | A sidebar with a calendar. | Avatar, Breadcrumb, Calendar, Collapsible, DropdownMenu, Separator, Sidebar | — | — | 3 | Built | — |
+| `sidebar-13` | Sidebar | A sidebar in a dialog. | Breadcrumb, Button, Dialog, Sidebar | — | — | 3 | Built | — |
+| `sidebar-14` | Sidebar | A sidebar on the right. | Breadcrumb, Sidebar | — | — | 3 | Built | — |
+| `sidebar-15` | Sidebar | A left and a right sidebar. | Avatar, Breadcrumb, Calendar, Collapsible, DropdownMenu, Popover, Separator, Sidebar | — | — | 3 | Built | — |
+| `sidebar-16` | Sidebar | A sidebar with a sticky site header. | Avatar, Breadcrumb, Button, Collapsible, DropdownMenu, Label, Separator, Sidebar | — | — | 3 | Built | — |
 | `chart-area-axes` | Charts | A area chart example (axes). | Card, AreaChart | AreaChart | AreaChart | 4 | Parked | — |
 | `chart-area-default` | Charts | A area chart example (default). | Card, AreaChart | AreaChart | AreaChart | 4 | Parked | — |
 | `chart-area-gradient` | Charts | A area chart example (gradient). | Card, AreaChart | AreaChart | AreaChart | 4 | Parked | — |
@@ -149,6 +149,15 @@ Taken on 24 November 2026 from the shadcn/ui registry (CLI 4.23.0). `app/blocks/
 | `preview-02` | Upstream previews | Upstream’s second theme preview: a grid of component examples, including a QR code. | — | — | — | 5 | Parked | — |
 | `preview-03` | Upstream previews | An empty upstream stub (it renders “Preview 03”). | — | — | — | 5 | Parked | — |
 
+## How blocks differ from upstream
+
+- **Headings:** every block has one `h1`. Upstream's sidebar blocks have none, so each now has a visible page heading above its placeholder content.
+- **Labels:** search fields have visible labels; upstream hides them.
+- **Lists:** upstream's file tree (`sidebar-11`) puts buttons straight into lists; each row is now a list item.
+- **Random data:** `sidebar-09` shuffled its messages at random; it now rotates them in a fixed order, so screenshots are stable. `sidebar-12` and `sidebar-15` show a fixed date (12 October 2026) for the same reason.
+- **Widths:** `sidebar-09` sets its 22rem width through the `--sidebar-width` variable with a class, because `style` attributes aren't allowed.
+- **Calendars:** the calendar lists in `sidebar-12` and `sidebar-15` use Checkbox, so each calendar's on/off state is announced.
+
 ## Parked blocks
 
 A parked block can't be built from `@graftwork/ui` yet. Its registry entry has `status: "parked"` and a `reason`, and the gallery lists it separately. It gets no Figma component until it's built.
@@ -191,4 +200,5 @@ The code here is the source of truth. Figma is built from it.
 Blocks stay in the template. Something moves into `@graftwork/ui` only when two real apps need it. Candidates noticed so far:
 
 - **App shell:** sidebar plus a header with a trigger and breadcrumb, with slots. Repeated across all 16 sidebar blocks and `dashboard-01`.
+- **Sidebar overlaps:** the 16 sidebar blocks reuse the same handful of parts, copied into each block: a team or version switcher, a user menu, project and secondary navigation, and the header with a trigger and breadcrumb. `sidebar-03`, `-04` and `-14` differ only in variant and side, and `sidebar-10` and `-15` share their left sidebar. These parts are the app-shell candidate's slots.
 - **Auth page layout:** the centred, two-column and muted-background wrappers repeat across the login and sign-up blocks.
