@@ -301,7 +301,7 @@ export const blocks: readonly Block[] = [
     category: "Charts",
     description: "A stacked area chart with a value axis.",
     upstream: { id: "chart-area-axes", style: "new-york-v4", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-4849",
     status: "built",
   },
   {
@@ -310,7 +310,7 @@ export const blocks: readonly Block[] = [
     category: "Charts",
     description: "An area chart with one series.",
     upstream: { id: "chart-area-default", style: "new-york-v4", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-3266",
     status: "built",
   },
   {
@@ -339,7 +339,7 @@ export const blocks: readonly Block[] = [
     category: "Charts",
     description: "A stacked area chart of daily figures with a time-range control.",
     upstream: { id: "chart-area-interactive", style: "new-york-v4", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-5899",
     status: "built",
   },
   {
@@ -348,7 +348,7 @@ export const blocks: readonly Block[] = [
     category: "Charts",
     description: "A stacked area chart with a legend.",
     upstream: { id: "chart-area-legend", style: "new-york-v4", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-4524",
     status: "built",
   },
   {
@@ -357,7 +357,7 @@ export const blocks: readonly Block[] = [
     category: "Charts",
     description: "An area chart with straight lines between points.",
     upstream: { id: "chart-area-linear", style: "new-york-v4", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-3577",
     status: "built",
   },
   {
@@ -366,7 +366,7 @@ export const blocks: readonly Block[] = [
     category: "Charts",
     description: "An area chart with two stacked series.",
     upstream: { id: "chart-area-stacked", style: "new-york-v4", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-4199",
     status: "built",
   },
   {
@@ -375,7 +375,7 @@ export const blocks: readonly Block[] = [
     category: "Charts",
     description: "An area chart showing each series' share of the total.",
     upstream: { id: "chart-area-stacked-expand", style: "new-york-v4", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-5174",
     status: "built",
   },
   {
@@ -384,7 +384,7 @@ export const blocks: readonly Block[] = [
     category: "Charts",
     description: "An area chart drawn as steps.",
     upstream: { id: "chart-area-step", style: "new-york-v4", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-3888",
     status: "built",
   },
   {
@@ -463,7 +463,7 @@ export const blocks: readonly Block[] = [
     category: "Charts",
     description: "A line chart with one series.",
     upstream: { id: "chart-line-default", style: "new-york-v4", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-1383",
     status: "built",
   },
   {
@@ -472,7 +472,7 @@ export const blocks: readonly Block[] = [
     category: "Charts",
     description: "A line chart with a dot on each point.",
     upstream: { id: "chart-line-dots", style: "new-york-v4", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-2596",
     status: "built",
   },
   {
@@ -501,7 +501,7 @@ export const blocks: readonly Block[] = [
     category: "Charts",
     description: "A line chart of daily figures with a control to switch series.",
     upstream: { id: "chart-line-interactive", style: "new-york-v4", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-5598",
     status: "built",
   },
   {
@@ -510,7 +510,7 @@ export const blocks: readonly Block[] = [
     category: "Charts",
     description: "A line chart with each point's value.",
     upstream: { id: "chart-line-label", style: "new-york-v4", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-2919",
     status: "built",
   },
   {
@@ -529,7 +529,7 @@ export const blocks: readonly Block[] = [
     category: "Charts",
     description: "A line chart with straight lines between points.",
     upstream: { id: "chart-line-linear", style: "new-york-v4", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-1685",
     status: "built",
   },
   {
@@ -538,7 +538,7 @@ export const blocks: readonly Block[] = [
     category: "Charts",
     description: "A line chart with two series.",
     upstream: { id: "chart-line-multiple", style: "new-york-v4", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-2283",
     status: "built",
   },
   {
@@ -547,7 +547,7 @@ export const blocks: readonly Block[] = [
     category: "Charts",
     description: "A line chart drawn as steps.",
     upstream: { id: "chart-line-step", style: "new-york-v4", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-1984",
     status: "built",
   },
   {
