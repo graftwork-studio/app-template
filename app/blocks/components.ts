@@ -57,6 +57,23 @@ import ChartRadarGridCustom from "./chart-radar-grid-custom/block";
 import ChartRadarGridFill from "./chart-radar-grid-fill/block";
 import ChartRadarGridNone from "./chart-radar-grid-none/block";
 import ChartPieInteractive from "./chart-pie-interactive/block";
+import ChartAreaGradient from "./chart-area-gradient/block";
+import ChartAreaIcons from "./chart-area-icons/block";
+import ChartLineDotsColors from "./chart-line-dots-colors/block";
+import ChartLineDotsCustom from "./chart-line-dots-custom/block";
+import ChartLineLabelCustom from "./chart-line-label-custom/block";
+import ChartRadarIcons from "./chart-radar-icons/block";
+import ChartRadarLabelCustom from "./chart-radar-label-custom/block";
+import ChartRadarRadius from "./chart-radar-radius/block";
+import ChartTooltipDefault from "./chart-tooltip-default/block";
+import ChartTooltipIndicatorLine from "./chart-tooltip-indicator-line/block";
+import ChartTooltipIndicatorNone from "./chart-tooltip-indicator-none/block";
+import ChartTooltipLabelCustom from "./chart-tooltip-label-custom/block";
+import ChartTooltipLabelFormatter from "./chart-tooltip-label-formatter/block";
+import ChartTooltipLabelNone from "./chart-tooltip-label-none/block";
+import ChartTooltipFormatter from "./chart-tooltip-formatter/block";
+import ChartTooltipIcons from "./chart-tooltip-icons/block";
+import ChartTooltipAdvanced from "./chart-tooltip-advanced/block";
 import Sidebar01 from "./sidebar-01/block";
 import Sidebar02 from "./sidebar-02/block";
 import Sidebar03 from "./sidebar-03/block";
@@ -139,6 +156,23 @@ export const blockComponents: Record<string, ComponentType> = {
   "chart-radar-grid-fill": ChartRadarGridFill,
   "chart-radar-grid-none": ChartRadarGridNone,
   "chart-pie-interactive": ChartPieInteractive,
+  "chart-area-gradient": ChartAreaGradient,
+  "chart-area-icons": ChartAreaIcons,
+  "chart-line-dots-colors": ChartLineDotsColors,
+  "chart-line-dots-custom": ChartLineDotsCustom,
+  "chart-line-label-custom": ChartLineLabelCustom,
+  "chart-radar-icons": ChartRadarIcons,
+  "chart-radar-label-custom": ChartRadarLabelCustom,
+  "chart-radar-radius": ChartRadarRadius,
+  "chart-tooltip-default": ChartTooltipDefault,
+  "chart-tooltip-indicator-line": ChartTooltipIndicatorLine,
+  "chart-tooltip-indicator-none": ChartTooltipIndicatorNone,
+  "chart-tooltip-label-custom": ChartTooltipLabelCustom,
+  "chart-tooltip-label-formatter": ChartTooltipLabelFormatter,
+  "chart-tooltip-label-none": ChartTooltipLabelNone,
+  "chart-tooltip-formatter": ChartTooltipFormatter,
+  "chart-tooltip-icons": ChartTooltipIcons,
+  "chart-tooltip-advanced": ChartTooltipAdvanced,
   "sidebar-01": Sidebar01,
   "sidebar-02": Sidebar02,
   "sidebar-03": Sidebar03,
