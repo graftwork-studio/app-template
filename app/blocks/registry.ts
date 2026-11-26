@@ -905,8 +905,7 @@ export const blocks: readonly Block[] = [
     description: "A dashboard with a sidebar, summary cards, an interactive area chart and a data table.",
     upstream: { id: "dashboard-01", style: "aria-nova", version: UPSTREAM_VERSION },
     figma: null,
-    status: "parked",
-    reason: "Needs DataTable row reordering by drag and drop. Its interactive area chart can now be built with AreaChart (see chart-area-interactive).",
+    status: "built",
   },
   {
     id: "preview",

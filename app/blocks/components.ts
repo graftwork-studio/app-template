@@ -1,4 +1,5 @@
 import type { ComponentType } from "react";
+import Dashboard01 from "./dashboard-01/block";
 import Login01 from "./login-01/block";
 import Login02 from "./login-02/block";
 import Login03 from "./login-03/block";
@@ -98,6 +99,7 @@ import Signup05 from "./signup-05/block";
 
 /** The component for each built block, by id. registry.ts holds everything else about it. */
 export const blockComponents: Record<string, ComponentType> = {
+  "dashboard-01": Dashboard01,
   "login-01": Login01,
   "login-02": Login02,
   "login-03": Login03,

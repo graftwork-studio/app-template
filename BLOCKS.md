@@ -30,7 +30,7 @@ The gallery is on in development and in the test build, and returns 404 in a pro
 
 Taken on 24 November 2026 from the shadcn/ui registry (CLI 4.23.0). `app/blocks/inventory.ts` holds the same list for the tests.
 
-- **Page blocks (30):** upstream offers 27 page blocks plus 3 internal previews for the React Aria base (`aria-nova` style). The Radix (`radix-nova`) and Base UI (`base-nova`) styles offer the same 30. All 27 page blocks use components we have, apart from `dashboard-01`'s draggable table rows.
+- **Page blocks (30):** upstream offers 27 page blocks plus 3 internal previews for the React Aria base (`aria-nova` style). The Radix (`radix-nova`) and Base UI (`base-nova`) styles offer the same 30. All 27 page blocks use components we have. `dashboard-01`'s draggable table rows use DataTable's `onReorder`, added in `@graftwork/ui` 2.9.0.
 - **Chart blocks (70):** upstream offers these for the Radix base only (`new-york-v4`). They don't exist in the `aria-nova` registry. They are Recharts examples in a card. All 70 are built with `BarChart`, `LineChart`, `AreaChart`, `PieChart`, `RadialChart` and `RadarChart`.
 - **Figma:** all 74 `@graftwork/ui` components are in the Graftwork Design System library. The Figma library has all six charts, with their options, so "Missing in Figma" matches "Missing in code" for charts.
 
@@ -42,7 +42,7 @@ Taken on 24 November 2026 from the shadcn/ui registry (CLI 4.23.0). `app/blocks/
 | 2 | Sign-up | 5 | 5 | 0 | No missing components |
 | 3 | Sidebar | 16 | 16 | 0 | No missing components |
 | 4 | Charts | 70 | 70 | 0 | Ten bar charts with `BarChart`, seven line charts with `LineChart` and eight area charts with `AreaChart` (`@graftwork/ui` 2.6.0); eleven pie charts with `PieChart`, six radial charts with `RadialChart` and eleven radar charts with `RadarChart` (2.7.0); the last seventeen, including nine tooltip examples, with the chart options added in 2.8.0 |
-| 5 | Dashboard and upstream previews | 4 | 0 | 4 | Parked |
+| 5 | Dashboard and upstream previews | 4 | 1 | 3 | `dashboard-01` with DataTable row reordering (`@graftwork/ui` 2.9.0). The three upstream previews stay parked |
 
 ### All blocks
 
@@ -144,7 +144,7 @@ Taken on 24 November 2026 from the shadcn/ui registry (CLI 4.23.0). `app/blocks/
 | `chart-tooltip-label-custom` | Charts | A stacked bar chart whose tooltip heading is a formatted date. | Card, BarChart | — | — | 4 | Built | [chart-tooltip-label-custom](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=56-10199) |
 | `chart-tooltip-label-formatter` | Charts | A stacked bar chart with formatted dates. | Card, BarChart | — | — | 4 | Built | [chart-tooltip-label-formatter](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=56-10416) |
 | `chart-tooltip-label-none` | Charts | A stacked bar chart whose tooltip has no heading or markers. | Card, BarChart | — | — | 4 | Built | [chart-tooltip-label-none](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=56-10633) |
-| `dashboard-01` | Dashboard | A dashboard with a sidebar, summary cards, an interactive area chart and a data table. | AreaChart, Avatar, Badge, Breadcrumb, Button, Card, Checkbox, DataTable, Drawer, DropdownMenu, Input, Label, Select, Separator, Sheet, Sidebar, Tabs, Toast, ToggleGroup | AreaChart (interactive, with a time-range control), DataTable row reordering by drag and drop | AreaChart | 5 | Parked | — |
+| `dashboard-01` | Dashboard | A dashboard with a sidebar, summary cards, an interactive area chart and a data table. | AreaChart, Avatar, Badge, Breadcrumb, Button, Card, Checkbox, DataTable, Drawer, DropdownMenu, Input, Label, Select, Separator, Sheet, Sidebar, Tabs, Toast, ToggleGroup | — | — | 5 | Built | dashboard-01 |
 | `preview` | Upstream previews | Upstream’s theme preview for its “create” page: a grid of component examples. | — | — | — | 5 | Parked | — |
 | `preview-02` | Upstream previews | Upstream’s second theme preview: a grid of component examples, including a QR code. | — | — | — | 5 | Parked | — |
 | `preview-03` | Upstream previews | An empty upstream stub (it renders “Preview 03”). | — | — | — | 5 | Parked | — |
@@ -168,6 +168,7 @@ Taken on 24 November 2026 from the shadcn/ui registry (CLI 4.23.0). `app/blocks/
 - **Random data:** `sidebar-09` shuffled its messages at random; it now rotates them in a fixed order, so screenshots are stable. `sidebar-12` and `sidebar-15` show a fixed date (12 October 2026) for the same reason.
 - **Widths:** `sidebar-09` sets its 22rem width through the `--sidebar-width` variable with a class, because `style` attributes aren't allowed.
 - **Calendars:** the calendar lists in `sidebar-12` and `sidebar-15` use Checkbox, so each calendar's on/off state is announced.
+- **Dashboard table:** `dashboard-01`'s rows reorder with DataTable's `onReorder` (React Aria drag and drop, so it works from the keyboard too), and its columns can't be sorted while reordering is on. Upstream edits Target, Limit and Reviewer inside the table; here they're read-only in the table and edited in each section's drawer, because inputs inside a grid fight its arrow keys and need visible labels. Rows per page and first and last page buttons are left out: DataTable pages with `Pagination`. The view tabs wrap on narrow screens instead of becoming a `Select`, and the time range is always a `Select`, not a toggle group. The summary cards' label is a small heading and the figure is text, rather than the figure being the heading.
 - **Passwords:** upstream's `signup-03` and `signup-04` put the password and its confirmation side by side, with one shared hint under both that isn't linked to either field. They're stacked here, each with its own linked hint.
 
 ## Parked blocks
@@ -176,7 +177,6 @@ A parked block can't be built from `@graftwork/ui` yet. Its registry entry has `
 
 | Blocks | What's missing | Where it would be added |
 | --- | --- | --- |
-| `dashboard-01` | DataTable row reordering by drag and drop (its interactive area chart is `chart-area-interactive`) | `@graftwork/ui` (minor) |
 | `preview`, `preview-02`, `preview-03` | Not page layouts. They are upstream's internal theme previews (`preview-03` is an empty stub, `preview-02` also needs a QR code). `ComponentShowcase` already does this job | Not planned |
 
 ## Figma file
