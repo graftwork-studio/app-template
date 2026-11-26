@@ -904,7 +904,7 @@ export const blocks: readonly Block[] = [
     category: "Dashboard",
     description: "A dashboard with a sidebar, summary cards, an interactive area chart and a data table.",
     upstream: { id: "dashboard-01", style: "aria-nova", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=59-493",
     status: "built",
   },
   {
