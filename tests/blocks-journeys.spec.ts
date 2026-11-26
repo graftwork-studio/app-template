@@ -109,9 +109,13 @@ test("dashboard-01: rows reorder from the keyboard, and a section opens in a dra
   await expect(rowHeaders.first()).toHaveText("Cover page");
 
   // Move onto the first row's drag handle, pick the row up, move it down two places and drop it.
-  await outline.getByRole("row", { name: /Cover page/ }).focus();
-  await page.keyboard.press("ArrowRight");
-  await expect(outline.getByRole("button", { name: "Drag Cover page" })).toBeFocused();
+  // Retry until the page has hydrated and React Aria moves focus from the row to its handle.
+  const handle = outline.getByRole("button", { name: "Drag Cover page" });
+  await expect(async () => {
+    await outline.getByRole("row", { name: /Cover page/ }).focus();
+    await page.keyboard.press("ArrowRight");
+    await expect(handle).toBeFocused({ timeout: 1000 });
+  }).toPass();
   await page.keyboard.press("Enter");
   await page.keyboard.press("ArrowDown");
   await page.keyboard.press("ArrowDown");
