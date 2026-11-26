@@ -186,8 +186,8 @@ importers:
   .:
     dependencies:
       '@graftwork/ui':
-        specifier: 2.7.0
-        version: 2.7.0(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(redux@5.0.1)
+        specifier: 2.8.0
+        version: 2.8.0(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(redux@5.0.1)
       '@internationalized/date':
         specifier: 3.12.4
         version: 3.12.4
@@ -379,11 +379,11 @@ packages:
   '@fontsource-variable/geist@5.3.0':
     resolution: {integrity: sha512-j0m+vLQuG5XAYoHtGCVu0spvlGreR3EzpECUVzkFmI1mTVnAO38l/NEPDCFgZ177JxzYJCLSmTQibIiYPilGrA==}
 
-  '@graftwork/tokens@2.7.0':
-    resolution: {integrity: sha512-WFbzdMM4DHuuIckRUAdDYQ7LE0vPlgGOSLqFaa2ql8hPsGvG4vjPkIrQ8CP9wq5gDbf8xb4iTX35L7dWc+HCEg==}
+  '@graftwork/tokens@2.8.0':
+    resolution: {integrity: sha512-drKKVk4UUWeO8eN2hV28m+YEPNNdfEz/+1WHzfb6YwpHPLBySBoBElPbgd4deLDMxLkq0KQV8do6XbBjHf161g==}
 
-  '@graftwork/ui@2.7.0':
-    resolution: {integrity: sha512-QYJ+SVvaV7C95G9pv5QH/OTpAwb0J2j0QmRFvxBDOV/4UStFA8JFVonKs5M+kaR+wT7stHTwEa/vRp73atCUKg==}
+  '@graftwork/ui@2.8.0':
+    resolution: {integrity: sha512-P+bjnS3HZfHBTiE0yurbUjgHjHRX0EtnWPhgl89Y2C6y6nAcAiFTdfRV8NP8jS7GlGU8WZqo8cxOWE8zg839Iw==}
     peerDependencies:
       react: ^19.0.0
       react-dom: ^19.0.0
@@ -2374,12 +2374,12 @@ snapshots:
 
   '@fontsource-variable/geist@5.3.0': {}
 
-  '@graftwork/tokens@2.7.0': {}
+  '@graftwork/tokens@2.8.0': {}
 
-  '@graftwork/ui@2.7.0(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(redux@5.0.1)':
+  '@graftwork/ui@2.8.0(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(redux@5.0.1)':
     dependencies:
       '@fontsource-variable/geist': 5.3.0
-      '@graftwork/tokens': 2.7.0
+      '@graftwork/tokens': 2.8.0
       '@internationalized/date': 3.12.4
       '@tanstack/react-table': 9.3.1(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       class-variance-authority: 0.7.1

@@ -31,8 +31,8 @@ The gallery is on in development and in the test build, and returns 404 in a pro
 Taken on 24 November 2026 from the shadcn/ui registry (CLI 4.23.0). `app/blocks/inventory.ts` holds the same list for the tests.
 
 - **Page blocks (30):** upstream offers 27 page blocks plus 3 internal previews for the React Aria base (`aria-nova` style). The Radix (`radix-nova`) and Base UI (`base-nova`) styles offer the same 30. All 27 page blocks use components we have, apart from `dashboard-01`'s draggable table rows.
-- **Chart blocks (70):** upstream offers these for the Radix base only (`new-york-v4`). They don't exist in the `aria-nova` registry. They are Recharts examples in a card. 53 can be built with `BarChart`, `LineChart`, `AreaChart`, `PieChart`, `RadialChart` and `RadarChart`; the rest need options those charts don't have, or custom tooltips.
-- **Figma:** all 74 `@graftwork/ui` components are in the Graftwork Design System library. The Figma library has all six charts, with BarChart's options, so "Missing in Figma" matches "Missing in code" for charts.
+- **Chart blocks (70):** upstream offers these for the Radix base only (`new-york-v4`). They don't exist in the `aria-nova` registry. They are Recharts examples in a card. All 70 are built with `BarChart`, `LineChart`, `AreaChart`, `PieChart`, `RadialChart` and `RadarChart`.
+- **Figma:** all 74 `@graftwork/ui` components are in the Graftwork Design System library. The Figma library has all six charts, with their options, so "Missing in Figma" matches "Missing in code" for charts.
 
 ### Build batches
 
@@ -41,7 +41,7 @@ Taken on 24 November 2026 from the shadcn/ui registry (CLI 4.23.0). `app/blocks/
 | 1 (pilot) | Login | 5 | 5 | 0 | No missing components |
 | 2 | Sign-up | 5 | 5 | 0 | No missing components |
 | 3 | Sidebar | 16 | 16 | 0 | No missing components |
-| 4 | Charts | 70 | 53 | 17 | Ten bar charts with `BarChart`, seven line charts with `LineChart` and eight area charts with `AreaChart` (`@graftwork/ui` 2.6.0); eleven pie charts with `PieChart`, six radial charts with `RadialChart` and eleven radar charts with `RadarChart` (2.7.0) |
+| 4 | Charts | 70 | 70 | 0 | Ten bar charts with `BarChart`, seven line charts with `LineChart` and eight area charts with `AreaChart` (`@graftwork/ui` 2.6.0); eleven pie charts with `PieChart`, six radial charts with `RadialChart` and eleven radar charts with `RadarChart` (2.7.0); the last seventeen, including nine tooltip examples, with the chart options added in 2.8.0 |
 | 5 | Dashboard and upstream previews | 4 | 0 | 4 | Parked |
 
 ### All blocks
@@ -76,8 +76,8 @@ Taken on 24 November 2026 from the shadcn/ui registry (CLI 4.23.0). `app/blocks/
 | `sidebar-16` | Sidebar | A sidebar with a sticky site header. | Avatar, Breadcrumb, Button, Collapsible, DropdownMenu, Label, Separator, Sidebar | — | — | 3 | Built | [sidebar-16](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=17-4202) |
 | `chart-area-axes` | Charts | A stacked area chart with a value axis. | Card, AreaChart | — | — | 4 | Built | [chart-area-axes](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-4849) |
 | `chart-area-default` | Charts | An area chart with one series. | Card, AreaChart | — | — | 4 | Built | [chart-area-default](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-3266) |
-| `chart-area-gradient` | Charts | A stacked area chart with gradient fills. | Card, AreaChart | AreaChart support for gradient fills | AreaChart support for gradient fills | 4 | Parked | — |
-| `chart-area-icons` | Charts | A stacked area chart with icons in the legend. | Card, AreaChart | AreaChart support for legend icons | AreaChart support for legend icons | 4 | Parked | — |
+| `chart-area-gradient` | Charts | A stacked area chart with gradient fills. | Card, AreaChart | — | — | 4 | Built | [chart-area-gradient](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=56-7470) |
+| `chart-area-icons` | Charts | A stacked area chart with icons in the legend. | Card, AreaChart | — | — | 4 | Built | [chart-area-icons](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=56-7648) |
 | `chart-area-interactive` | Charts | A stacked area chart of daily figures with a time-range control. | Card, AreaChart | — | — | 4 | Built | [chart-area-interactive](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-5899) |
 | `chart-area-legend` | Charts | A stacked area chart with a legend. | Card, AreaChart | — | — | 4 | Built | [chart-area-legend](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-4524) |
 | `chart-area-linear` | Charts | An area chart with straight lines between points. | Card, LineChart | — | — | 4 | Built | [chart-area-linear](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-3577) |
@@ -96,11 +96,11 @@ Taken on 24 November 2026 from the shadcn/ui registry (CLI 4.23.0). `app/blocks/
 | `chart-bar-stacked` | Charts | A bar chart with stacked series. | Card, BarChart | — | — | 4 | Built | [chart-bar-stacked](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=49-6805) |
 | `chart-line-default` | Charts | A line chart with one series. | Card, LineChart | — | — | 4 | Built | [chart-line-default](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-1383) |
 | `chart-line-dots` | Charts | A line chart with a dot on each point. | Card, LineChart | — | — | 4 | Built | [chart-line-dots](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-2596) |
-| `chart-line-dots-colors` | Charts | A line chart with a colour for each point. | Card, LineChart | LineChart support for a colour per point | LineChart support for a colour per point | 4 | Parked | — |
-| `chart-line-dots-custom` | Charts | A line chart with icons as point markers. | Card, LineChart | LineChart support for custom point markers | LineChart support for custom point markers | 4 | Parked | — |
+| `chart-line-dots-colors` | Charts | A line chart with a colour for each point. | Card, LineChart | — | — | 4 | Built | [chart-line-dots-colors](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=56-7820) |
+| `chart-line-dots-custom` | Charts | A line chart with icons as point markers. | Card, LineChart | — | — | 4 | Built | [chart-line-dots-custom](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=56-8001) |
 | `chart-line-interactive` | Charts | A line chart of daily figures with a control to switch series. | Card, LineChart | — | — | 4 | Built | [chart-line-interactive](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-5598) |
 | `chart-line-label` | Charts | A line chart with each point's value. | Card, LineChart | — | — | 4 | Built | [chart-line-label](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-2919) |
-| `chart-line-label-custom` | Charts | A line chart labelled with category names. | Card, LineChart | LineChart support for category labels and a colour per point | LineChart support for category labels and a colour per point | 4 | Parked | — |
+| `chart-line-label-custom` | Charts | A line chart with category names on its points. | Card, LineChart | — | — | 4 | Built | [chart-line-label-custom](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=56-8179) |
 | `chart-line-linear` | Charts | A line chart with straight lines between points. | Card, LineChart | — | — | 4 | Built | [chart-line-linear](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-1685) |
 | `chart-line-multiple` | Charts | A line chart with two series. | Card, LineChart | — | — | 4 | Built | [chart-line-multiple](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-2283) |
 | `chart-line-step` | Charts | A line chart drawn as steps. | Card, LineChart | — | — | 4 | Built | [chart-line-step](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=28-1984) |
@@ -123,27 +123,27 @@ Taken on 24 November 2026 from the shadcn/ui registry (CLI 4.23.0). `app/blocks/
 | `chart-radar-grid-custom` | Charts | A radar chart example (grid custom). | Card, RadarChart | — | — | 4 | Built | [chart-radar-grid-custom](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=49-15317) |
 | `chart-radar-grid-fill` | Charts | A radar chart example (grid fill). | Card, RadarChart | — | — | 4 | Built | [chart-radar-grid-fill](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=49-15633) |
 | `chart-radar-grid-none` | Charts | A radar chart example (grid none). | Card, RadarChart | — | — | 4 | Built | [chart-radar-grid-none](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=49-15949) |
-| `chart-radar-icons` | Charts | A radar chart example (icons). | Card, RadarChart | RadarChart support for legend icons | RadarChart support for legend icons | 4 | Parked | — |
-| `chart-radar-label-custom` | Charts | A radar chart example (label custom). | Card, RadarChart | RadarChart support for custom axis labels | RadarChart support for custom axis labels | 4 | Parked | — |
+| `chart-radar-icons` | Charts | A radar chart with icons in the legend. | Card, RadarChart | — | — | 4 | Built | [chart-radar-icons](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=56-8357) |
+| `chart-radar-label-custom` | Charts | A radar chart with each series' value on its axis labels. | Card, RadarChart | — | — | 4 | Built | [chart-radar-label-custom](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=56-8538) |
 | `chart-radar-legend` | Charts | A radar chart example (legend). | Card, RadarChart | — | — | 4 | Built | [chart-radar-legend](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=49-14046) |
 | `chart-radar-lines-only` | Charts | A radar chart example (lines only). | Card, RadarChart | — | — | 4 | Built | [chart-radar-lines-only](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=49-13735) |
 | `chart-radar-multiple` | Charts | A radar chart example (multiple). | Card, RadarChart | — | — | 4 | Built | [chart-radar-multiple](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=49-13419) |
-| `chart-radar-radius` | Charts | A radar chart example (radius). | Card, RadarChart | RadarChart support for a radius scale | RadarChart support for a radius scale | 4 | Parked | — |
+| `chart-radar-radius` | Charts | A radar chart with a value scale along one radius. | Card, RadarChart | — | — | 4 | Built | [chart-radar-radius](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=56-8716) |
 | `chart-radial-grid` | Charts | A radial chart example (grid). | Card, RadialChart | — | — | 4 | Built | [chart-radial-grid](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=49-11687) |
 | `chart-radial-label` | Charts | A radial chart example (label). | Card, RadialChart | — | — | 4 | Built | [chart-radial-label](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=49-11379) |
 | `chart-radial-shape` | Charts | A radial chart example (shape). | Card, RadialChart | — | — | 4 | Built | [chart-radial-shape](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=49-12227) |
 | `chart-radial-simple` | Charts | A radial chart example (simple). | Card, RadialChart | — | — | 4 | Built | [chart-radial-simple](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=49-11083) |
 | `chart-radial-stacked` | Charts | A radial chart example (stacked). | Card, RadialChart | — | — | 4 | Built | [chart-radial-stacked](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=49-12471) |
 | `chart-radial-text` | Charts | A radial chart example (text). | Card, RadialChart | — | — | 4 | Built | [chart-radial-text](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=49-11976) |
-| `chart-tooltip-advanced` | Charts | A chart tooltip example (advanced). | Card, BarChart | Custom chart tooltips (ChartTooltip isn’t exported) | Chart tooltip | 4 | Parked | — |
-| `chart-tooltip-default` | Charts | A chart tooltip example (default). | Card, BarChart | Custom chart tooltips (ChartTooltip isn’t exported) | Chart tooltip | 4 | Parked | — |
-| `chart-tooltip-formatter` | Charts | A chart tooltip example (formatter). | Card, BarChart | Custom chart tooltips (ChartTooltip isn’t exported) | Chart tooltip | 4 | Parked | — |
-| `chart-tooltip-icons` | Charts | A chart tooltip example (icons). | Card, BarChart | Custom chart tooltips (ChartTooltip isn’t exported) | Chart tooltip | 4 | Parked | — |
-| `chart-tooltip-indicator-line` | Charts | A chart tooltip example (indicator line). | Card, BarChart | Custom chart tooltips (ChartTooltip isn’t exported) | Chart tooltip | 4 | Parked | — |
-| `chart-tooltip-indicator-none` | Charts | A chart tooltip example (indicator none). | Card, BarChart | Custom chart tooltips (ChartTooltip isn’t exported) | Chart tooltip | 4 | Parked | — |
-| `chart-tooltip-label-custom` | Charts | A chart tooltip example (label custom). | Card, BarChart | Custom chart tooltips (ChartTooltip isn’t exported) | Chart tooltip | 4 | Parked | — |
-| `chart-tooltip-label-formatter` | Charts | A chart tooltip example (label formatter). | Card, BarChart | Custom chart tooltips (ChartTooltip isn’t exported) | Chart tooltip | 4 | Parked | — |
-| `chart-tooltip-label-none` | Charts | A chart tooltip example (label none). | Card, BarChart | Custom chart tooltips (ChartTooltip isn’t exported) | Chart tooltip | 4 | Parked | — |
+| `chart-tooltip-advanced` | Charts | A stacked bar chart whose tooltip has units and a total. | Card, BarChart | — | — | 4 | Built | [chart-tooltip-advanced](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=56-8894) |
+| `chart-tooltip-default` | Charts | A stacked bar chart with the default tooltip. | Card, BarChart | — | — | 4 | Built | [chart-tooltip-default](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=56-9114) |
+| `chart-tooltip-formatter` | Charts | A stacked bar chart whose values carry a unit. | Card, BarChart | — | — | 4 | Built | [chart-tooltip-formatter](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=56-9331) |
+| `chart-tooltip-icons` | Charts | A stacked bar chart with icons in the tooltip and legend. | Card, BarChart | — | — | 4 | Built | [chart-tooltip-icons](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=56-9548) |
+| `chart-tooltip-indicator-line` | Charts | A stacked bar chart whose tooltip marks each row with a line. | Card, BarChart | — | — | 4 | Built | [chart-tooltip-indicator-line](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=56-9765) |
+| `chart-tooltip-indicator-none` | Charts | A stacked bar chart whose tooltip has no row markers. | Card, BarChart | — | — | 4 | Built | [chart-tooltip-indicator-none](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=56-9982) |
+| `chart-tooltip-label-custom` | Charts | A stacked bar chart whose tooltip heading is a formatted date. | Card, BarChart | — | — | 4 | Built | [chart-tooltip-label-custom](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=56-10199) |
+| `chart-tooltip-label-formatter` | Charts | A stacked bar chart with formatted dates. | Card, BarChart | — | — | 4 | Built | [chart-tooltip-label-formatter](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=56-10416) |
+| `chart-tooltip-label-none` | Charts | A stacked bar chart whose tooltip has no heading or markers. | Card, BarChart | — | — | 4 | Built | [chart-tooltip-label-none](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=56-10633) |
 | `dashboard-01` | Dashboard | A dashboard with a sidebar, summary cards, an interactive area chart and a data table. | AreaChart, Avatar, Badge, Breadcrumb, Button, Card, Checkbox, DataTable, Drawer, DropdownMenu, Input, Label, Select, Separator, Sheet, Sidebar, Tabs, Toast, ToggleGroup | AreaChart (interactive, with a time-range control), DataTable row reordering by drag and drop | AreaChart | 5 | Parked | — |
 | `preview` | Upstream previews | Upstream’s theme preview for its “create” page: a grid of component examples. | — | — | — | 5 | Parked | — |
 | `preview-02` | Upstream previews | Upstream’s second theme preview: a grid of component examples, including a QR code. | — | — | — | 5 | Parked | — |
@@ -177,13 +177,7 @@ A parked block can't be built from `@graftwork/ui` yet. Its registry entry has `
 | Blocks | What's missing | Where it would be added |
 | --- | --- | --- |
 | `dashboard-01` | DataTable row reordering by drag and drop (its interactive area chart is `chart-area-interactive`) | `@graftwork/ui` (minor) |
-| `chart-line-dots-colors`, `-dots-custom`, `-label-custom` | LineChart options: a colour per point, custom point markers, category names as labels | `@graftwork/ui` (minor) |
-| `chart-area-icons`, `chart-area-gradient` | AreaChart options: icons in the legend, gradient fills | `@graftwork/ui` (minor) |
-| `chart-radar-icons`, `-label-custom`, `-radius` | RadarChart options: icons in the legend, custom axis labels showing each value, a value scale along the radius | `@graftwork/ui` (minor) |
-| 9 `chart-tooltip-*` | Custom chart tooltips: BarChart's tooltip is fixed, and the chart primitives aren't exported | `@graftwork/ui` (minor) |
 | `preview`, `preview-02`, `preview-03` | Not page layouts. They are upstream's internal theme previews (`preview-03` is an empty stub, `preview-02` also needs a QR code). `ComponentShowcase` already does this job | Not planned |
-
-Each new chart type or option follows the existing charts: a written summary and a "view as table" toggle showing the same data.
 
 ## Figma file
 
