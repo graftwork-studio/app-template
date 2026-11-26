@@ -22,6 +22,41 @@ import ChartLineStep from "./chart-line-step/block";
 import ChartBarDefault from "./chart-bar-default/block";
 import ChartBarMultiple from "./chart-bar-multiple/block";
 import ChartBarInteractive from "./chart-bar-interactive/block";
+import ChartBarActive from "./chart-bar-active/block";
+import ChartBarHorizontal from "./chart-bar-horizontal/block";
+import ChartBarLabel from "./chart-bar-label/block";
+import ChartBarLabelCustom from "./chart-bar-label-custom/block";
+import ChartBarMixed from "./chart-bar-mixed/block";
+import ChartBarNegative from "./chart-bar-negative/block";
+import ChartBarStacked from "./chart-bar-stacked/block";
+import ChartPieSimple from "./chart-pie-simple/block";
+import ChartPieDonut from "./chart-pie-donut/block";
+import ChartPieDonutActive from "./chart-pie-donut-active/block";
+import ChartPieDonutText from "./chart-pie-donut-text/block";
+import ChartPieLabel from "./chart-pie-label/block";
+import ChartPieLabelCustom from "./chart-pie-label-custom/block";
+import ChartPieLabelList from "./chart-pie-label-list/block";
+import ChartPieLegend from "./chart-pie-legend/block";
+import ChartPieSeparatorNone from "./chart-pie-separator-none/block";
+import ChartPieStacked from "./chart-pie-stacked/block";
+import ChartRadialSimple from "./chart-radial-simple/block";
+import ChartRadialLabel from "./chart-radial-label/block";
+import ChartRadialGrid from "./chart-radial-grid/block";
+import ChartRadialText from "./chart-radial-text/block";
+import ChartRadialShape from "./chart-radial-shape/block";
+import ChartRadialStacked from "./chart-radial-stacked/block";
+import ChartRadarDefault from "./chart-radar-default/block";
+import ChartRadarDots from "./chart-radar-dots/block";
+import ChartRadarMultiple from "./chart-radar-multiple/block";
+import ChartRadarLinesOnly from "./chart-radar-lines-only/block";
+import ChartRadarLegend from "./chart-radar-legend/block";
+import ChartRadarGridCircle from "./chart-radar-grid-circle/block";
+import ChartRadarGridCircleFill from "./chart-radar-grid-circle-fill/block";
+import ChartRadarGridCircleNoLines from "./chart-radar-grid-circle-no-lines/block";
+import ChartRadarGridCustom from "./chart-radar-grid-custom/block";
+import ChartRadarGridFill from "./chart-radar-grid-fill/block";
+import ChartRadarGridNone from "./chart-radar-grid-none/block";
+import ChartPieInteractive from "./chart-pie-interactive/block";
 import Sidebar01 from "./sidebar-01/block";
 import Sidebar02 from "./sidebar-02/block";
 import Sidebar03 from "./sidebar-03/block";
@@ -69,6 +104,41 @@ export const blockComponents: Record<string, ComponentType> = {
   "chart-bar-default": ChartBarDefault,
   "chart-bar-multiple": ChartBarMultiple,
   "chart-bar-interactive": ChartBarInteractive,
+  "chart-bar-active": ChartBarActive,
+  "chart-bar-horizontal": ChartBarHorizontal,
+  "chart-bar-label": ChartBarLabel,
+  "chart-bar-label-custom": ChartBarLabelCustom,
+  "chart-bar-mixed": ChartBarMixed,
+  "chart-bar-negative": ChartBarNegative,
+  "chart-bar-stacked": ChartBarStacked,
+  "chart-pie-simple": ChartPieSimple,
+  "chart-pie-donut": ChartPieDonut,
+  "chart-pie-donut-active": ChartPieDonutActive,
+  "chart-pie-donut-text": ChartPieDonutText,
+  "chart-pie-label": ChartPieLabel,
+  "chart-pie-label-custom": ChartPieLabelCustom,
+  "chart-pie-label-list": ChartPieLabelList,
+  "chart-pie-legend": ChartPieLegend,
+  "chart-pie-separator-none": ChartPieSeparatorNone,
+  "chart-pie-stacked": ChartPieStacked,
+  "chart-radial-simple": ChartRadialSimple,
+  "chart-radial-label": ChartRadialLabel,
+  "chart-radial-grid": ChartRadialGrid,
+  "chart-radial-text": ChartRadialText,
+  "chart-radial-shape": ChartRadialShape,
+  "chart-radial-stacked": ChartRadialStacked,
+  "chart-radar-default": ChartRadarDefault,
+  "chart-radar-dots": ChartRadarDots,
+  "chart-radar-multiple": ChartRadarMultiple,
+  "chart-radar-lines-only": ChartRadarLinesOnly,
+  "chart-radar-legend": ChartRadarLegend,
+  "chart-radar-grid-circle": ChartRadarGridCircle,
+  "chart-radar-grid-circle-fill": ChartRadarGridCircleFill,
+  "chart-radar-grid-circle-no-lines": ChartRadarGridCircleNoLines,
+  "chart-radar-grid-custom": ChartRadarGridCustom,
+  "chart-radar-grid-fill": ChartRadarGridFill,
+  "chart-radar-grid-none": ChartRadarGridNone,
+  "chart-pie-interactive": ChartPieInteractive,
   "sidebar-01": Sidebar01,
   "sidebar-02": Sidebar02,
   "sidebar-03": Sidebar03,

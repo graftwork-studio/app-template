@@ -101,6 +101,20 @@ test("chart-area-interactive: the time range changes the data, and the table mat
   await expectNoAxeViolations(page);
 });
 
+test("chart-pie-interactive: choosing a month highlights it, and the table says which", async ({ page }) => {
+  await page.goto("/blocks/preview/chart-pie-interactive");
+  await expect(page.getByRole("heading", { name: "Desktop visitors: January highlighted" })).toBeVisible();
+  await page.getByRole("button", { name: /Month/ }).focus();
+  await page.keyboard.press("Enter");
+  await page.getByRole("option", { name: "March" }).click();
+  await expect(page.getByRole("heading", { name: "Desktop visitors: March highlighted" })).toBeVisible();
+  await expect(page.getByText(/March brought 237/)).toBeVisible();
+  await page.getByRole("button", { name: "View as table" }).click();
+  await expect(page.getByRole("grid").getByRole("rowheader", { name: "March (highlighted)" })).toBeVisible();
+  await expect(page.getByRole("grid").getByText("(highlighted)")).toHaveCount(1);
+  await expectNoAxeViolations(page);
+});
+
 // Every sidebar block with a trigger: it collapses and expands from the keyboard on
 // desktop, and opens as a dialog that returns focus on mobile.
 const SIDEBAR_BLOCKS = builtBlocks.filter((block) => block.category === "Sidebar" && block.id !== "sidebar-13").map((block) => block.id);
