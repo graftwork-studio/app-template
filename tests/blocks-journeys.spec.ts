@@ -101,6 +101,40 @@ test("chart-area-interactive: the time range changes the data, and the table mat
   await expectNoAxeViolations(page);
 });
 
+test("dashboard-01: rows reorder from the keyboard, and a section opens in a drawer", async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await page.goto("/blocks/preview/dashboard-01");
+  const outline = page.getByRole("grid", { name: "Outline" });
+  const rowHeaders = outline.getByRole("rowheader");
+  await expect(rowHeaders.first()).toHaveText("Cover page");
+
+  // Move onto the first row's drag handle, pick the row up, move it down two places and drop it.
+  // Retry until the page has hydrated and React Aria moves focus from the row to its handle.
+  const handle = outline.getByRole("button", { name: "Drag Cover page" });
+  await expect(async () => {
+    await outline.getByRole("row", { name: /Cover page/ }).focus();
+    await page.keyboard.press("ArrowRight");
+    await expect(handle).toBeFocused({ timeout: 1000 });
+  }).toPass();
+  await page.keyboard.press("Enter");
+  await page.keyboard.press("ArrowDown");
+  await page.keyboard.press("ArrowDown");
+  await page.keyboard.press("Enter");
+  await expect(rowHeaders.nth(0)).toHaveText("Table of contents");
+  await expect(rowHeaders.nth(2)).toHaveText("Cover page");
+
+  // Open a section's drawer, check its form, and close it.
+  await outline.getByRole("button", { name: "Design", exact: true }).click();
+  const drawer = page.getByRole("dialog", { name: "Design" });
+  await expect(drawer).toBeVisible();
+  await expect(drawer.getByRole("textbox", { name: "Header" })).toHaveValue("Design");
+  await waitForOverlays(page);
+  await expectNoAxeViolations(page);
+  await drawer.getByRole("button", { name: "Done" }).click();
+  await expect(drawer).toBeHidden();
+  await expectNoAxeViolations(page);
+});
+
 test("chart-pie-interactive: choosing a month highlights it, and the table says which", async ({ page }) => {
   await page.goto("/blocks/preview/chart-pie-interactive");
   await expect(page.getByRole("heading", { name: "Desktop visitors: January highlighted" })).toBeVisible();
@@ -245,7 +279,7 @@ test("the gallery lists every built and parked block from the registry", async (
   await page.keyboard.press("Enter");
   const table = page.getByRole("grid", { name: "Parked blocks" });
   await expect(table.getByRole("row")).toHaveCount(parkedBlocks.length + 1);
-  await expect(table.getByRole("rowheader", { name: "dashboard-01" })).toBeVisible();
+  await expect(table.getByRole("rowheader", { name: "preview", exact: true })).toBeVisible();
 });
 
 test("gallery search filters blocks, and width and theme change the preview", async ({ page }) => {
