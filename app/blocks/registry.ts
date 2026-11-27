@@ -920,11 +920,10 @@ export const blocks: readonly Block[] = [
     id: "preview-02",
     title: "Preview 02",
     category: "Upstream previews",
-    description: "Upstream’s second theme preview: a grid of component examples, including a QR code.",
+    description: "A second wall of example cards, mostly money, music and home controls, including a QR code.",
     upstream: { id: "preview-02", style: "aria-nova", version: UPSTREAM_VERSION },
     figma: null,
-    status: "parked",
-    reason: "Needs QrCode, added in design-system #101. Built once that's released.",
+    status: "built",
   },
 ];
 
