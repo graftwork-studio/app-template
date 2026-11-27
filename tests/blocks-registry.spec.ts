@@ -1,4 +1,4 @@
-import { readdirSync } from "node:fs";
+import { existsSync, readdirSync } from "node:fs";
 import path from "node:path";
 import { expect, test } from "@playwright/test";
 import { COMPLETED_BATCHES, inventory } from "../app/blocks/inventory";
@@ -11,12 +11,14 @@ import { blocks } from "../app/blocks/registry";
 
 const BLOCKS_DIR = path.join(import.meta.dirname, "..", "app", "blocks");
 
-/** Block folders: everything in app/blocks/ except routes and private folders. */
+/**
+ * Block folders: folders in app/blocks/ with a block.tsx. The preview block shares its folder with the
+ * /blocks/preview/[id] route, so a folder name alone doesn't say whether it's a block.
+ */
 function blockFolders() {
   return readdirSync(BLOCKS_DIR, { withFileTypes: true })
-    .filter((entry) => entry.isDirectory())
+    .filter((entry) => entry.isDirectory() && existsSync(path.join(BLOCKS_DIR, entry.name, "block.tsx")))
     .map((entry) => entry.name)
-    .filter((name) => name !== "preview" && !name.startsWith("_") && !name.startsWith("("))
     .sort();
 }
 
