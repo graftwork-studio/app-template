@@ -922,7 +922,7 @@ export const blocks: readonly Block[] = [
     category: "Upstream previews",
     description: "A second wall of example cards, mostly money, music and home controls, including a QR code.",
     upstream: { id: "preview-02", style: "aria-nova", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=84-4873",
     status: "built",
   },
 ];
