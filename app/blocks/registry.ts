@@ -911,11 +911,10 @@ export const blocks: readonly Block[] = [
     id: "preview",
     title: "Preview",
     category: "Upstream previews",
-    description: "Upstream’s theme preview for its “create” page: a grid of component examples.",
+    description: "A wall of example cards that shows the theme at a glance: forms, charts, empty states and more.",
     upstream: { id: "preview", style: "aria-nova", version: UPSTREAM_VERSION },
-    figma: null,
-    status: "parked",
-    reason: "Not a page layout: an internal upstream preview of the theme. ComponentShowcase already does this job in our template.",
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=79-4821",
+    status: "built",
   },
   {
     id: "preview-02",
@@ -925,17 +924,7 @@ export const blocks: readonly Block[] = [
     upstream: { id: "preview-02", style: "aria-nova", version: UPSTREAM_VERSION },
     figma: null,
     status: "parked",
-    reason: "Not a page layout: an internal upstream preview of the theme. ComponentShowcase already does this job in our template. It also needs a QR code component.",
-  },
-  {
-    id: "preview-03",
-    title: "Preview 03",
-    category: "Upstream previews",
-    description: "An empty upstream stub (it renders “Preview 03”).",
-    upstream: { id: "preview-03", style: "aria-nova", version: UPSTREAM_VERSION },
-    figma: null,
-    status: "parked",
-    reason: "Not a page layout: an internal upstream preview of the theme. ComponentShowcase already does this job in our template.",
+    reason: "Needs QrCode, added in design-system #101. Built once that's released.",
   },
 ];
 

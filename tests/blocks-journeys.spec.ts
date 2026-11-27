@@ -135,6 +135,33 @@ test("dashboard-01: rows reorder from the keyboard, and a section opens in a dra
   await expectNoAxeViolations(page);
 });
 
+test("preview: the clone tabs switch, and the feedback and alert dialogs open and close", async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await page.goto("/blocks/preview/preview");
+
+  // Retry the first step until the page has hydrated.
+  await expect(async () => {
+    await page.getByRole("tab", { name: "Local" }).click();
+    await expect(page.getByRole("textbox", { name: "HTTPS URL" })).toBeVisible({ timeout: 1000 });
+  }).toPass();
+  await page.getByRole("tab", { name: "SSH" }).click();
+  await expect(page.getByRole("textbox", { name: "SSH URL" })).toHaveValue("git@example.com:team/app.git");
+
+  await page.getByRole("button", { name: "Share feedback" }).click();
+  const feedback = page.getByRole("dialog", { name: "Share feedback" });
+  await expect(feedback.getByRole("textbox", { name: "Name" })).toBeVisible();
+  await waitForOverlays(page);
+  await expectNoAxeViolations(page);
+  await feedback.getByRole("button", { name: "Cancel" }).click();
+  await expect(feedback).toBeHidden();
+
+  await page.getByRole("button", { name: "Alert dialog" }).click();
+  const alert = page.getByRole("alertdialog", { name: "Allow the accessory to connect?" });
+  await expect(alert).toBeVisible();
+  await alert.getByRole("button", { name: "Don’t allow" }).click();
+  await expect(alert).toBeHidden();
+});
+
 test("chart-pie-interactive: choosing a month highlights it, and the table says which", async ({ page }) => {
   await page.goto("/blocks/preview/chart-pie-interactive");
   await expect(page.getByRole("heading", { name: "Desktop visitors: January highlighted" })).toBeVisible();
@@ -279,7 +306,7 @@ test("the gallery lists every built and parked block from the registry", async (
   await page.keyboard.press("Enter");
   const table = page.getByRole("grid", { name: "Parked blocks" });
   await expect(table.getByRole("row")).toHaveCount(parkedBlocks.length + 1);
-  await expect(table.getByRole("rowheader", { name: "preview", exact: true })).toBeVisible();
+  await expect(table.getByRole("rowheader", { name: "preview-02", exact: true })).toBeVisible();
 });
 
 test("gallery search filters blocks, and width and theme change the preview", async ({ page }) => {

@@ -30,7 +30,7 @@ The gallery is on in development and in the test build, and returns 404 in a pro
 
 Taken on 24 November 2026 from the shadcn/ui registry (CLI 4.23.0). `app/blocks/inventory.ts` holds the same list for the tests.
 
-- **Page blocks (30):** upstream offers 27 page blocks plus 3 internal previews for the React Aria base (`aria-nova` style). The Radix (`radix-nova`) and Base UI (`base-nova`) styles offer the same 30. All 27 page blocks use components we have. `dashboard-01`'s draggable table rows use DataTable's `onReorder`, added in `@graftwork/ui` 2.9.0.
+- **Page blocks (29):** upstream offers 27 page blocks plus 3 internal previews for the React Aria base (`aria-nova` style). The Radix (`radix-nova`) and Base UI (`base-nova`) styles offer the same 30. `preview-03` is an empty stub (it renders “Preview 03”), so it isn't listed here. All 27 page blocks and `preview` use components we have; `preview-02` needs `QrCode`. `dashboard-01`'s draggable table rows use DataTable's `onReorder`, added in `@graftwork/ui` 2.9.0.
 - **Chart blocks (70):** upstream offers these for the Radix base only (`new-york-v4`). They don't exist in the `aria-nova` registry. They are Recharts examples in a card. All 70 are built with `BarChart`, `LineChart`, `AreaChart`, `PieChart`, `RadialChart` and `RadarChart`.
 - **Figma:** all 74 `@graftwork/ui` components are in the Graftwork Design System library. The Figma library has all six charts, with their options, so "Missing in Figma" matches "Missing in code" for charts.
 
@@ -42,7 +42,7 @@ Taken on 24 November 2026 from the shadcn/ui registry (CLI 4.23.0). `app/blocks/
 | 2 | Sign-up | 5 | 5 | 0 | No missing components |
 | 3 | Sidebar | 16 | 16 | 0 | No missing components |
 | 4 | Charts | 70 | 70 | 0 | Ten bar charts with `BarChart`, seven line charts with `LineChart` and eight area charts with `AreaChart` (`@graftwork/ui` 2.6.0); eleven pie charts with `PieChart`, six radial charts with `RadialChart` and eleven radar charts with `RadarChart` (2.7.0); the last seventeen, including nine tooltip examples, with the chart options added in 2.8.0 |
-| 5 | Dashboard and upstream previews | 4 | 1 | 3 | `dashboard-01` with DataTable row reordering (`@graftwork/ui` 2.9.0). The three upstream previews stay parked |
+| 5 | Dashboard and upstream previews | 3 | 2 | 1 | `dashboard-01` with DataTable row reordering (`@graftwork/ui` 2.9.0) and `preview`. `preview-02` is parked until `QrCode` is released |
 
 ### All blocks
 
@@ -145,9 +145,8 @@ Taken on 24 November 2026 from the shadcn/ui registry (CLI 4.23.0). `app/blocks/
 | `chart-tooltip-label-formatter` | Charts | A stacked bar chart with formatted dates. | Card, BarChart | — | — | 4 | Built | [chart-tooltip-label-formatter](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=56-10416) |
 | `chart-tooltip-label-none` | Charts | A stacked bar chart whose tooltip has no heading or markers. | Card, BarChart | — | — | 4 | Built | [chart-tooltip-label-none](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=56-10633) |
 | `dashboard-01` | Dashboard | A dashboard with a sidebar, summary cards, an interactive area chart and a data table. | AreaChart, Avatar, Badge, Breadcrumb, Button, Card, Checkbox, DataTable, Drawer, DropdownMenu, Input, Label, Select, Separator, Sheet, Sidebar, Tabs, Toast, ToggleGroup | — | — | 5 | Built | [dashboard-01](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=59-493) |
-| `preview` | Upstream previews | Upstream’s theme preview for its “create” page: a grid of component examples. | — | — | — | 5 | Parked | — |
-| `preview-02` | Upstream previews | Upstream’s second theme preview: a grid of component examples, including a QR code. | — | — | — | 5 | Parked | — |
-| `preview-03` | Upstream previews | An empty upstream stub (it renders “Preview 03”). | — | — | — | 5 | Parked | — |
+| `preview` | Upstream previews | A wall of example cards that shows the theme at a glance: forms, charts, empty states and more. | Alert, AlertDialog, AreaChart, Avatar, Badge, BarChart, Button, ButtonGroup, Card, Checkbox, Dialog, DropdownMenu, Empty, Input, InputGroup, Item, Kbd, NativeSelect, PieChart, Progress, RadioGroup, Select, Separator, Skeleton, Slider, Spinner, Switch, Table, Tabs, Textarea, ToggleGroup, Tooltip | — | — | 5 | Built | [preview](https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=79-4821) |
+| `preview-02` | Upstream previews | Upstream’s second theme preview: a grid of component examples, including a QR code. | — | QrCode | QrCode | 5 | Parked | — |
 
 ## How blocks differ from upstream
 
@@ -169,6 +168,8 @@ Taken on 24 November 2026 from the shadcn/ui registry (CLI 4.23.0). `app/blocks/
 - **Widths:** `sidebar-09` sets its 22rem width through the `--sidebar-width` variable with a class, because `style` attributes aren't allowed.
 - **Calendars:** the calendar lists in `sidebar-12` and `sidebar-15` use Checkbox, so each calendar's on/off state is announced.
 - **Dashboard table:** `dashboard-01`'s rows reorder with DataTable's `onReorder` (React Aria drag and drop, so it works from the keyboard too), and its columns can't be sorted while reordering is on. Upstream edits Target, Limit and Reviewer inside the table; here they're read-only in the table and edited in each section's drawer, because inputs inside a grid fight its arrow keys and need visible labels. Rows per page and first and last page buttons are left out: DataTable pages with `Pagination`. The view tabs wrap on narrow screens instead of becoming a `Select`, and the time range is always a `Select`, not a toggle group. The summary cards' label is a small heading and the figure is text, rather than the figure being the heading.
+- **Preview layout:** upstream lays `preview` out on a fixed 3000px canvas that scrolls sideways. Here the cards flow into as many 20rem columns as fit, in upstream's order, down to one column at 320px. Upstream shows the UI elements card twice (once per breakpoint); it appears once here. Its `AssignIssue` and `BarVisualizer` cards are imported but never shown, so they're left out.
+- **Preview content:** the theme cards show Graftwork's own tokens and font instead of upstream's style picker. Product names, photos and people became neutral placeholders: a workspace instead of a code host's, an image placeholder, initials instead of profile photos. Prices are in pounds and dates are British. The live waveform card draws a fixed waveform and doesn't use the microphone, so screenshots are stable. The chart cards use the chart's own title and written summary as the card heading, and every input, radio, checkbox and switch has a visible label. The `preview` block's files share `app/blocks/preview/` with the `/blocks/preview/[id]` route.
 - **Passwords:** upstream's `signup-03` and `signup-04` put the password and its confirmation side by side, with one shared hint under both that isn't linked to either field. They're stacked here, each with its own linked hint.
 
 ## Parked blocks
@@ -177,7 +178,7 @@ A parked block can't be built from `@graftwork/ui` yet. Its registry entry has `
 
 | Blocks | What's missing | Where it would be added |
 | --- | --- | --- |
-| `preview`, `preview-02`, `preview-03` | Not page layouts. They are upstream's internal theme previews (`preview-03` is an empty stub, `preview-02` also needs a QR code). `ComponentShowcase` already does this job | Not planned |
+| `preview-02` | `QrCode`, for its “QR connect” card | `@graftwork/ui`: design-system #101 |
 
 ## Figma file
 
@@ -190,6 +191,7 @@ Known differences from the code:
 - **Input text size:** below 768px the code's inputs use 16px text so iOS doesn't zoom in. The Figma Input is always 14px.
 - **Status message:** each form's empty `role="status"` line, used for announcements, isn't drawn.
 - **Charts:** chart blocks use instances of the library charts, which show each chart's sample data rather than the block's figures, and their plots are a fixed width, so at 320px the card crops them. Their titles, summaries and options are set to match the code. `highlight` and `showTotal` are booleans in Figma (see the Figma table in `CLAUDE.md`).
+- **Preview columns:** CSS columns rebalance `preview`'s cards at every width. Figma has no columns layout, so each breakpoint splits the cards into three, two or one fixed columns in the same order.
 - **Page layouts:** in code, the sidebar blocks use `AppShell` (except `sidebar-16`) and the log-in and sign-up blocks use `AuthLayout`. In Figma they're built from frames with the same structure and layer names as those components, not from instances of them. Figma has no slots, so an instance would need its sample sidebar or form swapped out and heavily overridden. Each block's description says which layout the code uses.
 
 ## Keeping Figma in step
