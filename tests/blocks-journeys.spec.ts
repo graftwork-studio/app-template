@@ -162,6 +162,22 @@ test("preview: the clone tabs switch, and the feedback and alert dialogs open an
   await expect(alert).toBeHidden();
 });
 
+test("preview-02: a scene sets the light sliders, and a preset moves the blinds", async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await page.goto("/blocks/preview/preview-02");
+  const brightness = page.getByRole("slider", { name: "Brightness" });
+  await expect(brightness).toHaveValue("90");
+  // Retry the first step until the page has hydrated.
+  await expect(async () => {
+    await page.getByRole("radio", { name: "Night light" }).click();
+    await expect(brightness).toHaveValue("15", { timeout: 1000 });
+  }).toPass();
+  await page.getByRole("radio", { name: "Closed" }).click();
+  await expect(page.getByRole("slider", { name: "Closed" })).toHaveValue("100");
+  await expect(page.getByRole("img", { name: "QR code to connect your phone" })).toBeVisible();
+  await expectNoAxeViolations(page);
+});
+
 test("chart-pie-interactive: choosing a month highlights it, and the table says which", async ({ page }) => {
   await page.goto("/blocks/preview/chart-pie-interactive");
   await expect(page.getByRole("heading", { name: "Desktop visitors: January highlighted" })).toBeVisible();
@@ -293,20 +309,15 @@ test("signup-05: the email-only form validates and works from the keyboard", asy
   await expect(page.getByRole("status")).toHaveText(/sample block/);
 });
 
-test("the gallery lists every built and parked block from the registry", async ({ page }) => {
+test("the gallery lists every built block, and hides the parked list when nothing is parked", async ({ page }) => {
   await page.goto("/blocks");
   await expect(page.getByRole("heading", { level: 1, name: "Blocks" })).toBeVisible();
   // The first category is open, so its previews are rendered.
   const first = builtBlocks[0]!;
   await expect(page.locator(`[data-block="${first.id}"] iframe`)).toHaveAttribute("src", `/blocks/preview/${first.id}`);
-  // Parked blocks are collapsed until asked for, then list every one with its reason.
-  const parked = page.getByRole("button", { name: `Parked blocks (${parkedBlocks.length})` });
-  await expect(parked).toHaveAttribute("aria-expanded", "false");
-  await parked.focus();
-  await page.keyboard.press("Enter");
-  const table = page.getByRole("grid", { name: "Parked blocks" });
-  await expect(table.getByRole("row")).toHaveCount(parkedBlocks.length + 1);
-  await expect(table.getByRole("rowheader", { name: "preview-02", exact: true })).toBeVisible();
+  // Every block is built. When one is parked again, test that the list shows it with its reason.
+  expect(parkedBlocks).toHaveLength(0);
+  await expect(page.getByRole("button", { name: /^Parked blocks/ })).toHaveCount(0);
 });
 
 test("gallery search filters blocks, and width and theme change the preview", async ({ page }) => {

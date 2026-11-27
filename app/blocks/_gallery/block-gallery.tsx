@@ -102,7 +102,8 @@ export function BlockGallery() {
       </search>
 
       <p role="status" className="text-sm text-text-secondary">
-        {shown.length === 1 ? "1 block" : `${shown.length} blocks`}, {shownParked.length} parked
+        {shown.length === 1 ? "1 block" : `${shown.length} blocks`}
+        {shownParked.length > 0 ? `, ${shownParked.length} parked` : null}
       </p>
 
       {shown.length === 0 ? (
@@ -140,38 +141,43 @@ export function BlockGallery() {
         </Accordion>
       )}
 
-      {/* Collapsed by default: the list is long, and only matters when you're looking for what's missing. */}
-      <Accordion expandedKeys={parkedOpen ? ["parked"] : []} onExpandedChange={(keys) => setParkedOpen(keys.size > 0)}>
-        <AccordionItem id="parked">
-          <AccordionTrigger level={2}>Parked blocks ({shownParked.length})</AccordionTrigger>
-          <AccordionContent>
-            <div className="flex flex-col gap-3 pb-6">
-              <p className="text-text-secondary">
-                These need a component or feature that the design system doesn’t have yet. BLOCKS.md says what each
-                is waiting for.
-              </p>
-              {parkedOpen && shownParked.length > 0 ? (
-                <Table aria-label="Parked blocks" density="compact">
-                  <TableHeader>
-                    <TableColumn isRowHeader>Block</TableColumn>
-                    <TableColumn>Category</TableColumn>
-                    <TableColumn>Why it’s parked</TableColumn>
-                  </TableHeader>
-                  <TableBody items={shownParked}>
-                    {(block) => (
-                      <TableRow id={block.id}>
-                        <TableCell>{block.id}</TableCell>
-                        <TableCell>{block.category}</TableCell>
-                        <TableCell>{block.reason}</TableCell>
-                      </TableRow>
-                    )}
-                  </TableBody>
-                </Table>
-              ) : null}
-            </div>
-          </AccordionContent>
-        </AccordionItem>
-      </Accordion>
+      {/* Collapsed by default: the list only matters when you're looking for what's missing. Hidden when nothing is parked. */}
+      {parkedBlocks.length > 0 ? (
+        <Accordion
+          expandedKeys={parkedOpen ? ["parked"] : []}
+          onExpandedChange={(keys) => setParkedOpen(keys.size > 0)}
+        >
+          <AccordionItem id="parked">
+            <AccordionTrigger level={2}>Parked blocks ({shownParked.length})</AccordionTrigger>
+            <AccordionContent>
+              <div className="flex flex-col gap-3 pb-6">
+                <p className="text-text-secondary">
+                  These need a component or feature that the design system doesn’t have yet. BLOCKS.md says what each is
+                  waiting for.
+                </p>
+                {parkedOpen && shownParked.length > 0 ? (
+                  <Table aria-label="Parked blocks" density="compact">
+                    <TableHeader>
+                      <TableColumn isRowHeader>Block</TableColumn>
+                      <TableColumn>Category</TableColumn>
+                      <TableColumn>Why it’s parked</TableColumn>
+                    </TableHeader>
+                    <TableBody items={shownParked}>
+                      {(block) => (
+                        <TableRow id={block.id}>
+                          <TableCell>{block.id}</TableCell>
+                          <TableCell>{block.category}</TableCell>
+                          <TableCell>{block.reason}</TableCell>
+                        </TableRow>
+                      )}
+                    </TableBody>
+                  </Table>
+                ) : null}
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      ) : null}
     </div>
   );
 }
@@ -247,7 +253,8 @@ function BlockEntry({ block }: { block: BuiltBlock }) {
 
         <p className="flex flex-wrap gap-x-4 gap-y-2 text-sm">
           <a href={href}>
-            Open {block.title} full size<span className="sr-only"> ({THEMES.find((t) => t.id === theme)?.name} theme)</span>
+            Open {block.title} full size
+            <span className="sr-only"> ({THEMES.find((t) => t.id === theme)?.name} theme)</span>
           </a>
           {block.figma ? (
             <a href={block.figma}>Open {block.title} in Figma</a>
