@@ -913,7 +913,7 @@ export const blocks: readonly Block[] = [
     category: "Upstream previews",
     description: "A wall of example cards that shows the theme at a glance: forms, charts, empty states and more.",
     upstream: { id: "preview", style: "aria-nova", version: UPSTREAM_VERSION },
-    figma: null,
+    figma: "https://www.figma.com/design/prmltYKyND4F2ioUj2oqtb/Graftwork-Blocks?node-id=79-4821",
     status: "built",
   },
   {
